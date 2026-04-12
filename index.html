@@ -79,11 +79,24 @@
             z-index: 1000;
         }
 
+            /* PC에서 메뉴가 가운데로 밀집하도록 max-width 설정 */
+            header .container {
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+
         nav {
             height: 70px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        /* 로고 및 언어 스위치 그룹 */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 30px; /* 로고와 언어 스위치 사이 간격 */
         }
 
         .logo {
@@ -94,7 +107,7 @@
         }
 
             .logo img {
-                height: 40px;
+                height: 52px; /* 로고 크기 증가 */
                 width: auto;
                 object-fit: contain;
                 transition: var(--transition);
@@ -124,14 +137,14 @@
             }
 
                 .menu-wrapper ul li {
-                    margin-left: 25px;
+                    margin-left: 30px;
                 }
 
                     .menu-wrapper ul li a {
                         text-decoration: none;
                         color: var(--gray);
                         font-weight: 400;
-                        font-size: 0.85rem;
+                        font-size: 1.05rem; /* 네비게이션 텍스트 크기 증가 */
                         transition: var(--transition);
                         letter-spacing: 1.5px;
                     }
@@ -145,17 +158,18 @@
                             font-weight: 700;
                         }
 
-        /* 헤더 우측 도구(언어, 햄버거) */
-        .header-controls {
+        .desktop-only {
             display: flex;
-            align-items: center;
-            margin-left: 30px;
+        }
+
+        .mobile-only {
+            display: none;
         }
 
         .lang-switch {
             display: flex;
-            gap: 8px;
-            font-size: 0.75rem;
+            gap: 10px;
+            font-size: 0.9rem; /* 텍스트 크기 증가 */
         }
 
         .lang-btn {
@@ -163,6 +177,7 @@
             color: #444;
             cursor: pointer;
             transition: var(--transition);
+            font-weight: 500;
         }
 
             .lang-btn.active {
@@ -179,8 +194,8 @@
         }
 
             .hamburger svg {
-                width: 24px;
-                height: 24px;
+                width: 28px;
+                height: 28px;
             }
 
         /* [3. 섹션 공통 레이아웃] */
@@ -224,7 +239,7 @@
                 display: none;
             }
 
-            /* Flexbox safe centering trick - 콘텐츠가 길어도 상단이 잘리지 않도록 안전하게 가운데 정렬 */
+            /* Flexbox safe centering trick */
             .section-content::before,
             .section-content::after {
                 content: '';
@@ -287,10 +302,10 @@
                 font-weight: 700;
             }
 
-        /* About 섹션 내 SNS 링크 */
+        /* About 섹션 내 SNS 링크 (PC, 모바일 모두 노출) */
         .about-social-links {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             margin-top: 40px;
             justify-content: center;
         }
@@ -298,7 +313,7 @@
             .about-social-links a {
                 color: var(--white);
                 background: rgba(255,255,255,0.1);
-                padding: 12px;
+                padding: 15px;
                 border-radius: 50%;
                 transition: var(--transition);
                 display: flex;
@@ -309,12 +324,12 @@
 
                 .about-social-links a:hover {
                     background: var(--senggi-red);
-                    transform: translateY(-3px);
+                    transform: translateY(-5px);
                 }
 
             .about-social-links svg {
-                width: 24px;
-                height: 24px;
+                width: 26px;
+                height: 26px;
             }
 
         @keyframes fadeInScale {
@@ -351,11 +366,11 @@
         }
 
         .gallery-item-swiper {
-            width: auto; /* 각 이미지의 원본 비율에 맞게 유동적 조절 */
+            width: auto;
             height: 100%;
             transition: transform 0.5s ease, opacity 0.5s ease;
             opacity: 0.4;
-            transform: scale(0.85); /* 주변 이미지 살짝 축소 */
+            transform: scale(0.85);
             background: transparent;
             cursor: pointer;
             display: flex;
@@ -372,9 +387,9 @@
             .gallery-item-swiper img {
                 width: auto;
                 height: 100%;
-                max-width: 85vw; /* 화면 넓이 초과 방지 */
+                max-width: 85vw;
                 max-height: 100%;
-                object-fit: contain; /* 원본 비율 유지, 잘림 없음 */
+                object-fit: contain;
                 border-radius: 12px;
                 box-shadow: 0 10px 20px rgba(0,0,0,0.5);
                 display: block;
@@ -382,7 +397,7 @@
 
         @media (min-width: 901px) {
             .gallery-item-swiper img {
-                max-width: 60vw; /* PC 환경 쾌적화 */
+                max-width: 60vw;
             }
         }
 
@@ -670,7 +685,7 @@
             }
 
             section {
-                padding-top: 100px; /* 제목이 헤더에 가리지 않도록 알맞게 조정 */
+                padding-top: 100px;
             }
 
             .section-title {
@@ -690,13 +705,13 @@
 
                 #about .container {
                     padding-top: 0;
-                    justify-content: center; /* 완벽한 중앙 정렬 */
+                    justify-content: center; /* 완벽한 중앙 정렬을 위해 마진 리셋 및 flex center */
                 }
 
             .about-logo {
                 width: 220px;
                 margin-top: 0;
-                margin-bottom: 20px;
+                margin-bottom: 25px;
             }
 
             .about-text {
@@ -731,7 +746,6 @@
             .gallery-swiper {
                 height: 50vh;
             }
-            /* 타이틀과 조화롭게 배치되도록 스와이퍼 높이 약간 축소 */
 
             /* 공간(SPACE) 도면 2개가 한 화면에 쏙 들어가도록 핏 조절 */
             #space {
@@ -768,17 +782,16 @@
             }
 
             /* 모바일 햄버거 버튼 및 언어 선택 버튼 배치 */
-            .header-controls {
-                margin-left: 0;
+            .desktop-only {
+                display: none !important;
+            }
+
+            .mobile-only {
+                display: flex;
             }
 
             .hamburger {
                 display: block;
-            }
-
-            .lang-switch {
-                font-size: 0.85rem;
-                gap: 12px;
             }
 
             /* 풀스크린 네비게이션 메뉴 오버레이 */
@@ -828,11 +841,6 @@
                     font-size: 1.2rem;
                     gap: 20px;
                 }
-
-                .menu-wrapper .social-links svg {
-                    width: 28px;
-                    height: 28px;
-                }
         }
     </style>
 </head>
@@ -845,6 +853,12 @@
                     <a href="#about" class="logo">
                         <img src="SenggiALTLogosIMAGE-02.png" alt="Senggi Logo">
                     </a>
+                    <!-- PC 언어선택 (메인 로고 우측) -->
+                    <div class="lang-switch desktop-only">
+                        <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
+                        <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
+                        <a class="lang-btn" onclick="setLanguage('JP'); closeMobileMenu();">JP</a>
+                    </div>
                 </div>
                 <div class="nav-right">
                     <div id="mobile-menu-wrapper" class="menu-wrapper">
@@ -856,18 +870,17 @@
                             <li><a href="#rental" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_rental">RENTAL</a></li>
                             <li><a href="#schedule" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_schedule">SCHEDULE</a></li>
                         </ul>
+                        <!-- 모바일 언어선택 (햄버거 메뉴 내) -->
+                        <div class="lang-switch mobile-only" style="margin-top: 30px; font-size: 1.2rem; gap: 20px;">
+                            <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
+                            <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
+                            <a class="lang-btn" onclick="setLanguage('JP'); closeMobileMenu();">JP</a>
+                        </div>
                     </div>
 
-                    <!-- 헤더 우측 컨트롤 (언어선택, 햄버거) -->
-                    <div class="header-controls">
-                        <div class="lang-switch">
-                            <a id="btn-kr" class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
-                            <a id="btn-en" class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
-                            <a id="btn-jp" class="lang-btn" onclick="setLanguage('JP'); closeMobileMenu();">JP</a>
-                        </div>
-                        <div class="hamburger" onclick="toggleMobileMenu()" title="Menu">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
-                        </div>
+                    <!-- 헤더 우측 컨트롤 (햄버거 버튼) -->
+                    <div class="hamburger" onclick="toggleMobileMenu()" title="Menu">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
                     </div>
                 </div>
             </nav>
@@ -885,7 +898,7 @@
                     교차하고 이어지는 공간입니다.
                 </div>
 
-                <!-- 소개 하단 SNS 링크 -->
+                <!-- 소개 하단 SNS 링크 (PC, 모바일 모두 표시) -->
                 <div class="about-social-links">
                     <a href="https://www.instagram.com/senggistudio" target="_blank" title="Instagram">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
@@ -1156,9 +1169,9 @@
         };
 
         function setLanguage(lang) {
-            document.getElementById('btn-kr').classList.toggle('active', lang === 'KR');
-            document.getElementById('btn-en').classList.toggle('active', lang === 'EN');
-            document.getElementById('btn-jp').classList.toggle('active', lang === 'JP');
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.trim() === lang);
+            });
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang][key]) el.innerHTML = translations[lang][key];
@@ -1202,14 +1215,14 @@
                 track.appendChild(slide);
             });
 
-            // Swiper JS 인스턴스 초기화 (무한루프, 클릭이동, 부드러운 스와이프 완벽 지원)
+            // Swiper JS 인스턴스 초기화
             new Swiper('.gallery-swiper', {
                 slidesPerView: 'auto',
                 centeredSlides: true,
                 loop: true,
                 speed: 600,
                 spaceBetween: 0,
-                slideToClickedSlide: true, // 옆에 보이는 80% 이미지를 클릭 시 중앙으로 이동!
+                slideToClickedSlide: true,
                 navigation: {
                     nextEl: '.next-arrow',
                     prevEl: '.prev-arrow',
