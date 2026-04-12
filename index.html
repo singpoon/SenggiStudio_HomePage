@@ -699,13 +699,13 @@
                 gap: 30px;
             }
 
-            /* About 모바일 내용을 위로 살짝 올리기 (패딩 조절) */
+            /* About 모바일 화면 아래로 쏠리게(내려가게) 최적화 */
             #about {
                 padding-top: 70px;
             }
 
                 #about .container {
-                    padding-top: 8vh; /* 기존 15vh에서 8vh로 수정하여 위로 올림 */
+                    padding-top: 8vh; /* 더 아래로 내려가도록 패딩 추가 */
                     justify-content: center;
                 }
 
@@ -735,11 +735,16 @@
                     padding: 10px;
                 }
 
-            /* 모바일 갤러리 설정 - 타이틀 하향 및 중앙 정렬 완벽 대응 */
+            /* 모바일 갤러리 설정 - 중앙 정렬 완벽 대응 */
             #gallery {
-                padding-top: 110px;
-                padding-bottom: 40px; /* 사진을 중앙에 맞추기 위한 하단 여백 추가 */
+                padding-top: 0;
+                padding-bottom: 0;
             }
+
+                #gallery .container {
+                    padding-top: 70px; /* 헤더 공간 띄우기 */
+                    justify-content: center; /* 전체 콘텐츠 수직 중앙 정렬 */
+                }
 
             .gallery-arrow {
                 display: none;
@@ -750,13 +755,12 @@
             }
             /* 모바일에서는 너비 확장 */
             .gallery-swiper {
-                height: 50vh;
+                height: 55vh;
             }
 
-            /* 공간(SPACE) 스냅 시 타이틀 하향 이동 */
+            /* 공간(SPACE) 도면 2개가 한 화면에 쏙 들어가도록 핏 조절 */
             #space {
-                padding-top: 110px;
-                padding-bottom: 20px;
+                padding-top: 85px;
             }
 
                 #space .space-grid {
@@ -859,6 +863,11 @@
                     gap: 30px;
                     margin-top: 30px;
                 }
+
+                .menu-wrapper .lang-switch {
+                    font-size: 1.2rem;
+                    gap: 20px;
+                }
         }
     </style>
 </head>
@@ -872,7 +881,7 @@
                         <img src="SenggiALTLogosIMAGE-02.png" alt="Senggi Logo">
                     </a>
                     <!-- 언어선택 (메인 로고 우측, PC/모바일 공통 노출) -->
-                    <div class="lang-switch">
+                    <div class="lang-switch desktop-only">
                         <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
                         <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
                         <a class="lang-btn" onclick="setLanguage('JP'); closeMobileMenu();">JP</a>
@@ -888,6 +897,12 @@
                             <li><a href="#rental" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_rental">RENTAL</a></li>
                             <li><a href="#schedule" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_schedule">SCHEDULE</a></li>
                         </ul>
+                        <!-- 모바일 언어선택 (햄버거 메뉴 내) -->
+                        <div class="lang-switch mobile-only" style="margin-top: 30px; font-size: 1.2rem; gap: 20px;">
+                            <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
+                            <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
+                            <a class="lang-btn" onclick="setLanguage('JP'); closeMobileMenu();">JP</a>
+                        </div>
                     </div>
 
                     <!-- 헤더 우측 컨트롤 (햄버거 버튼만 위치) -->
@@ -1076,7 +1091,7 @@
                         <li><span class="model">금, 일, 공휴일</span><span class="brand">880,000 KRW</span></li>
                         <li><span class="model">토요일</span><span class="brand">980,000 KRW</span></li>
                         <li><span class="model text-gray-400">* 기본 6시간 30분 기준 (셋팅/리허설/공연/철수)</span></li>
-                        <li><span class="model text-gray-400">* 초과 시 시간당 10만원 추가 비용 발생</span></li>
+                        <li><span class="model text-gray-400">* 초 시 시간당 10만원 추가 비용 발생</span></li>
                         <li><span class="model text-gray-400">* 부가세 별도 10%</span></li>
                     `,
                 list_rental_policy: `
