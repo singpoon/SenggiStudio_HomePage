@@ -187,6 +187,13 @@
                 font-weight: 700;
             }
 
+        /* 헤더 우측 컨트롤 (햄버거) */
+        .header-controls {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+        }
+
         .hamburger {
             display: none;
             cursor: pointer;
@@ -687,7 +694,7 @@
             }
 
             section {
-                padding-top: 70px; /* 헤더 공간 (전체 모바일 섹션 공통) */
+                padding-top: 100px;
             }
 
             .section-title {
@@ -700,45 +707,13 @@
                 gap: 30px;
             }
 
-            /* 모바일 헤더 레이아웃 최적화 (로고/언어/햄버거) */
-            .nav-left {
-                gap: 15px;
-            }
-
-            .logo img {
-                height: 40px;
-            }
-
-            .desktop-only {
-                display: none !important;
-            }
-
-            .mobile-only {
-                display: flex;
-            }
-
-            .header-controls {
-                margin-left: 0;
-                gap: 15px;
-            }
-            /* 언어버튼과 햄버거 간격 */
-            .hamburger {
-                display: block;
-                margin-left: 0;
-            }
-
-            .lang-btn {
-                font-size: 0.95rem;
-            }
-            /* 모바일에서는 1.15rem보다 작게 조절 */
-
             /* About 모바일 화면 살짝 위로 올리기 (패딩 조절) */
             #about {
                 padding-top: 70px;
             }
 
                 #about .container {
-                    padding-top: 5vh; /* 기존 8vh에서 5vh로 수정하여 살짝 위로 올림 */
+                    padding-top: 5vh;
                     justify-content: center;
                 }
 
@@ -779,7 +754,7 @@
                 }
 
                 #gallery .section-title {
-                    margin-top: 6vh; /* 타이틀을 아래로 더 내림 */
+                    margin-top: 6vh;
                     margin-bottom: 0;
                 }
 
@@ -825,7 +800,6 @@
             }
 
             /* 장비 및 대관 모바일 높이 설정 */
-            /* 스냅스크롤을 위해 섹션 높이를 다시 100dvh로 맞추고 내부 스크롤 허용 */
             section {
                 height: 100dvh;
                 padding-bottom: 0;
@@ -835,6 +809,30 @@
             .rental-item-list li {
                 min-height: auto;
                 padding: 15px 0;
+            }
+
+            /* 모바일 헤더 레이아웃 최적화 */
+            .nav-left {
+                gap: 15px;
+            }
+            /* 모바일에서 로고와 언어선택 사이 간격 축소 */
+            .logo img {
+                height: 40px;
+            }
+            /* 모바일 로고 크기 축소 */
+
+            .header-controls {
+                margin-left: 0;
+                gap: 15px;
+            }
+
+            .hamburger {
+                display: block;
+                margin-left: 0;
+            }
+
+            .lang-btn {
+                font-size: 0.95rem;
             }
 
             /* 풀스크린 네비게이션 메뉴 오버레이 */
@@ -870,20 +868,6 @@
                         .menu-wrapper ul li a {
                             font-size: 1.5rem;
                         }
-
-                .menu-wrapper .tools {
-                    flex-direction: column;
-                    margin-left: 0;
-                    padding-left: 0;
-                    border-left: none;
-                    gap: 30px;
-                    margin-top: 30px;
-                }
-
-                .menu-wrapper .lang-switch {
-                    font-size: 1.2rem;
-                    gap: 20px;
-                }
         }
     </style>
 </head>
@@ -896,8 +880,8 @@
                     <a href="#about" class="logo">
                         <img src="SenggiALTLogosIMAGE-02.png" alt="Senggi Logo">
                     </a>
-                    <!-- 언어선택 (메인 로고 우측, PC에서만 노출) -->
-                    <div class="lang-switch desktop-only">
+                    <!-- 언어선택 (메인 로고 우측, PC/모바일 공통 노출) -->
+                    <div class="lang-switch">
                         <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
                         <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
                         <a class="lang-btn" onclick="setLanguage('JP'); closeMobileMenu();">JP</a>
@@ -915,13 +899,8 @@
                         </ul>
                     </div>
 
-                    <!-- 헤더 우측 컨트롤 (모바일 언어선택 및 햄버거 버튼) -->
+                    <!-- 헤더 우측 컨트롤 (햄버거 버튼만 위치) -->
                     <div class="header-controls">
-                        <div class="lang-switch mobile-only">
-                            <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
-                            <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
-                            <a class="lang-btn" onclick="setLanguage('JP'); closeMobileMenu();">JP</a>
-                        </div>
                         <div class="hamburger" onclick="toggleMobileMenu()" title="Menu">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
                         </div>
@@ -1097,7 +1076,7 @@
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">WING Digital / Stage Box</span><span class="brand">Behringer</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">Thump-15 (4) / SRM 450</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive</span><span class="brand">Vintage</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">Thump-15 (4) / SRM 450 (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive</span><span class="brand">Vintage</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 (3) / AX3 (3) Wireless</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
 
