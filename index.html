@@ -170,7 +170,7 @@
         .lang-switch {
             display: flex;
             gap: 10px;
-            font-size: 1.15rem; /* PC 메뉴 크기와 동일하게 확대 */
+            font-size: 1.15rem;
         }
 
         .lang-btn {
@@ -179,6 +179,7 @@
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
+            font-size: 1.15rem; /* PC 메뉴 크기와 동일하게 확대 */
         }
 
             .lang-btn.active {
@@ -686,7 +687,7 @@
             }
 
             section {
-                padding-top: 100px;
+                padding-top: 70px; /* 헤더 공간 (전체 모바일 섹션 공통) */
             }
 
             .section-title {
@@ -699,13 +700,45 @@
                 gap: 30px;
             }
 
-            /* About 모바일 화면 */
+            /* 모바일 헤더 레이아웃 최적화 (로고/언어/햄버거) */
+            .nav-left {
+                gap: 15px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .desktop-only {
+                display: none !important;
+            }
+
+            .mobile-only {
+                display: flex;
+            }
+
+            .header-controls {
+                margin-left: 0;
+                gap: 15px;
+            }
+            /* 언어버튼과 햄버거 간격 */
+            .hamburger {
+                display: block;
+                margin-left: 0;
+            }
+
+            .lang-btn {
+                font-size: 0.95rem;
+            }
+            /* 모바일에서는 1.15rem보다 작게 조절 */
+
+            /* About 모바일 화면 살짝 위로 올리기 (패딩 조절) */
             #about {
                 padding-top: 70px;
             }
 
                 #about .container {
-                    padding-top: 8vh;
+                    padding-top: 5vh; /* 기존 8vh에서 5vh로 수정하여 살짝 위로 올림 */
                     justify-content: center;
                 }
 
@@ -735,24 +768,24 @@
                     padding: 10px;
                 }
 
-            /* 모바일 갤러리 설정 - 타이틀 하향 및 사진 상향 (중앙 밀집) */
+            /* 모바일 갤러리 설정 - 타이틀 하향 및 사진 정중앙 (완벽 대응) */
             #gallery {
-                padding-top: 0;
                 padding-bottom: 0;
             }
 
                 #gallery .container {
-                    padding-top: 70px;
-                    justify-content: center; /* 전체 그룹 중앙 정렬 */
+                    padding-top: 0;
+                    justify-content: flex-start;
                 }
 
                 #gallery .section-title {
-                    margin-top: 40px; /* 타이틀을 아래로 더 내림 */
-                    margin-bottom: 10px; /* 사진과의 간격을 줄여 사진을 위로 올림 */
+                    margin-top: 6vh; /* 타이틀을 아래로 더 내림 */
+                    margin-bottom: 0;
                 }
 
                 #gallery .section-content {
-                    flex-grow: 0; /* 컨텐츠 영역이 남은 공간 전체를 차지하지 않도록 해제 (위로 올라감) */
+                    flex-grow: 1; /* 남은 공간 전체 사용 */
+                    justify-content: center; /* 수직 정중앙 정렬 */
                     padding-bottom: 0;
                 }
 
@@ -766,13 +799,17 @@
             /* 모바일에서는 너비 확장 */
             .gallery-swiper {
                 height: 50vh;
+                margin-top: 0;
             }
-            /* 높이 최적화 */
 
-            /* 공간(SPACE) 도면 2개가 한 화면에 쏙 들어가도록 핏 조절 */
+            /* 공간(SPACE) 스냅 시 타이틀 하향 이동 */
             #space {
-                padding-top: 85px;
+                padding-bottom: 20px;
             }
+
+                #space .section-title {
+                    margin-top: 6vh; /* 갤러리와 동일하게 타이틀을 아래로 내림 */
+                }
 
                 #space .space-grid {
                     gap: 15px;
@@ -788,6 +825,7 @@
             }
 
             /* 장비 및 대관 모바일 높이 설정 */
+            /* 스냅스크롤을 위해 섹션 높이를 다시 100dvh로 맞추고 내부 스크롤 허용 */
             section {
                 height: 100dvh;
                 padding-bottom: 0;
@@ -797,38 +835,6 @@
             .rental-item-list li {
                 min-height: auto;
                 padding: 15px 0;
-            }
-
-            /* 모바일 헤더 레이아웃 최적화 */
-            .nav-left {
-                gap: 15px;
-            }
-            /* 모바일에서 로고와 언어선택 사이 간격 축소 */
-            .logo img {
-                height: 40px;
-            }
-            /* 모바일 로고 크기 축소 */
-
-            .desktop-only {
-                display: none !important;
-            }
-
-            .mobile-only {
-                display: flex;
-            }
-
-            .header-controls {
-                margin-left: 0;
-            }
-
-            .hamburger {
-                display: block;
-                margin-left: 10px;
-            }
-
-            .lang-switch {
-                font-size: 0.85rem;
-                gap: 8px;
             }
 
             /* 풀스크린 네비게이션 메뉴 오버레이 */
@@ -890,7 +896,7 @@
                     <a href="#about" class="logo">
                         <img src="SenggiALTLogosIMAGE-02.png" alt="Senggi Logo">
                     </a>
-                    <!-- 언어선택 (메인 로고 우측, PC/모바일 공통 노출) -->
+                    <!-- 언어선택 (메인 로고 우측, PC에서만 노출) -->
                     <div class="lang-switch desktop-only">
                         <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
                         <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
@@ -907,12 +913,6 @@
                             <li><a href="#rental" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_rental">RENTAL</a></li>
                             <li><a href="#schedule" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_schedule">SCHEDULE</a></li>
                         </ul>
-                        <!-- 모바일 언어선택 (햄버거 메뉴 내) -->
-                        <div class="lang-switch mobile-only" style="margin-top: 30px; font-size: 1.2rem; gap: 20px;">
-                            <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
-                            <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
-                            <a class="lang-btn" onclick="setLanguage('JP'); closeMobileMenu();">JP</a>
-                        </div>
                     </div>
 
                     <!-- 헤더 우측 컨트롤 (모바일 언어선택 및 햄버거 버튼) -->
