@@ -107,7 +107,7 @@
         }
 
             .logo img {
-                height: 52px; /* 로고 크기 증가 */
+                height: 60px; /* 로고 크기 증가 */
                 width: auto;
                 object-fit: contain;
                 transition: var(--transition);
@@ -144,7 +144,7 @@
                         text-decoration: none;
                         color: var(--gray);
                         font-weight: 400;
-                        font-size: 1.05rem; /* 네비게이션 텍스트 크기 증가 */
+                        font-size: 1.15rem; /* 네비게이션 텍스트 크기 증가 */
                         transition: var(--transition);
                         letter-spacing: 1.5px;
                     }
@@ -169,7 +169,7 @@
         .lang-switch {
             display: flex;
             gap: 10px;
-            font-size: 0.9rem; /* 텍스트 크기 증가 */
+            font-size: 0.9rem;
         }
 
         .lang-btn {
@@ -698,18 +698,18 @@
                 gap: 30px;
             }
 
-            /* About 모바일 완벽한 한 화면 핏 및 정중앙 정렬 최적화 */
+            /* About 모바일 화면 아래로 쏠리게(내려가게) 최적화 */
             #about {
-                padding-top: 70px; /* 헤더 높이만큼 여백 */
+                padding-top: 70px;
             }
 
                 #about .container {
-                    padding-top: 0;
-                    justify-content: center; /* 완벽한 중앙 정렬을 위해 마진 리셋 및 flex center */
+                    padding-top: 15vh; /* 더 아래로 내려가도록 패딩 추가 */
+                    justify-content: center;
                 }
 
             .about-logo {
-                width: 220px;
+                width: 240px;
                 margin-top: 0;
                 margin-bottom: 25px;
             }
@@ -878,9 +878,11 @@
                         </div>
                     </div>
 
-                    <!-- 헤더 우측 컨트롤 (햄버거 버튼) -->
-                    <div class="hamburger" onclick="toggleMobileMenu()" title="Menu">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
+                    <!-- 헤더 우측 컨트롤 (햄버거 버튼만 유지) -->
+                    <div class="header-controls">
+                        <div class="hamburger" onclick="toggleMobileMenu()" title="Menu">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
+                        </div>
                     </div>
                 </div>
             </nav>
