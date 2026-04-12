@@ -231,19 +231,32 @@
             letter-spacing: 12px;
             text-transform: uppercase;
             flex-shrink: 0;
+            z-index: 10;
         }
 
-        /* 공통 70% 너비 및 중앙 정렬 적용 */
+        /* 공통 70% 너비 및 중앙 정렬 적용, 내부 스크롤 허용 */
         .section-content {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             width: 70%;
             margin: 0 auto;
-            padding-bottom: 50px;
+            padding-bottom: 20px;
+            overflow-y: auto; /* 내부 스크롤 허용 */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
+
+            .section-content::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Flexbox safe centering trick - 콘텐츠가 길어도 상단이 잘리지 않도록 안전하게 가운데 정렬 */
+            .section-content::before,
+            .section-content::after {
+                content: '';
+                flex: auto;
+            }
 
         .subtitle {
             font-size: 1.32rem;
@@ -263,7 +276,7 @@
             background-repeat: no-repeat;
             padding-top: 70px;
             min-height: 100vh;
-            min-height: 100dvh; /* 배경 꽉 채우기 확실히 적용 */
+            min-height: 100dvh;
         }
 
             #about .container {
@@ -350,6 +363,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            flex-shrink: 0;
         }
 
         .gallery-swiper-container {
@@ -360,17 +374,20 @@
         .gallery-swiper {
             width: 100%;
             height: 60vh;
-            overflow: hidden; /* Swiper 내부 숨김 처리 */
+            overflow: hidden;
         }
 
         .gallery-item-swiper {
-            width: 60%; /* PC에서 기본 너비 */
+            width: auto; /* 각 이미지의 원본 비율에 맞게 유동적 조절 */
             height: 100%;
             transition: transform 0.5s ease, opacity 0.5s ease;
             opacity: 0.4;
-            transform: scale(0.8);
-            background: #000;
+            transform: scale(0.85); /* 주변 이미지 살짝 축소 */
+            background: transparent;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
             .gallery-item-swiper.swiper-slide-active {
@@ -380,10 +397,21 @@
             }
 
             .gallery-item-swiper img {
-                width: 100%;
+                width: auto;
                 height: 100%;
-                object-fit: cover;
+                max-width: 85vw; /* 화면 넓이 초과 방지 */
+                max-height: 100%;
+                object-fit: contain; /* 원본 비율 유지, 잘림 없음 */
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+                display: block;
             }
+
+        @media (min-width: 901px) {
+            .gallery-item-swiper img {
+                max-width: 60vw; /* PC 환경 쾌적화 */
+            }
+        }
 
         .gallery-arrow {
             position: absolute;
@@ -438,6 +466,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
+            flex-shrink: 0;
         }
 
         .dot {
@@ -460,6 +489,7 @@
             grid-template-columns: 1fr 1fr;
             width: 100%;
             gap: 60px;
+            flex-shrink: 0;
         }
 
         .space-col {
@@ -494,6 +524,7 @@
             align-items: start;
             grid-template-columns: repeat(3, 1fr);
             gap: 60px;
+            flex-shrink: 0;
         }
 
         .equip-category {
@@ -550,6 +581,7 @@
             align-items: stretch;
             grid-template-columns: repeat(3, 1fr);
             gap: 60px;
+            flex-shrink: 0;
         }
 
         .rental-item-list {
@@ -614,6 +646,7 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: none;
+            flex-shrink: 0;
         }
 
             .calendar-container iframe {
@@ -633,6 +666,7 @@
             color: #444;
             letter-spacing: 3px;
             font-weight: 500;
+            z-index: 10;
         }
 
         /* [미디어 쿼리 - 디바이스 최적화] */
@@ -663,7 +697,7 @@
             }
 
             section {
-                padding-top: 130px;
+                padding-top: 100px; /* 제목이 헤더에 가리지 않도록 알맞게 조정 */
             }
 
             .section-title {
@@ -678,17 +712,17 @@
 
             /* About 모바일 완벽한 한 화면 핏 및 중앙/하단 밀집 설정 */
             #about {
-                padding-top: 0; /* 패딩 리셋으로 절대적 중앙 허용 */
+                padding-top: 0;
             }
 
                 #about .container {
-                    padding-top: 100px; /* 헤더 영역을 고려 및 콘텐츠 전체를 더 아래로 내림 */
+                    padding-top: 80px;
                     justify-content: center;
                 }
 
             .about-logo {
                 width: 220px;
-                margin-top: 12vh; /* 로고를 중앙에서 더 아래로 내려줌 */
+                margin-top: 8vh;
                 margin-bottom: 20px;
             }
 
@@ -717,29 +751,10 @@
             .gallery-arrow {
                 display: none;
             }
-            /* 화살표 숨김 */
-            .gallery-item-swiper {
-                width: 85%;
-            }
-            /* 모바일에서는 너비 확장 */
-
-            section {
-                height: auto;
-                padding-bottom: 60px;
-                scroll-snap-align: none;
-            }
+            /* 스와이프 전용으로 화살표 숨김 */
 
             .floorplan-img-wrapper {
                 height: 35vh;
-            }
-
-            #gallery, #space, #equipment, #schedule, #rental {
-                height: auto;
-            }
-
-            .rental-item-list li {
-                min-height: auto;
-                padding: 15px 0;
             }
 
             /* 모바일 햄버거 버튼 및 언어 선택 버튼 배치 */
@@ -1030,7 +1045,7 @@
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">WING Digital / Stage Box</span><span class="brand">Behringer</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">Thump-15 (4) / SRM 450 (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive</span><span class="brand">Vintage</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">Thump-15 (4) / SRM 450</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive</span><span class="brand">Vintage</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 (3) / AX3 (3) Wireless</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
 
