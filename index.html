@@ -699,13 +699,13 @@
                 gap: 30px;
             }
 
-            /* About 모바일 화면 아래로 쏠리게(내려가게) 최적화 */
+            /* About 모바일 화면 */
             #about {
                 padding-top: 70px;
             }
 
                 #about .container {
-                    padding-top: 8vh; /* 더 아래로 내려가도록 패딩 추가 */
+                    padding-top: 8vh;
                     justify-content: center;
                 }
 
@@ -735,15 +735,25 @@
                     padding: 10px;
                 }
 
-            /* 모바일 갤러리 설정 - 중앙 정렬 완벽 대응 */
+            /* 모바일 갤러리 설정 - 타이틀 하향 및 사진 상향 (중앙 밀집) */
             #gallery {
                 padding-top: 0;
                 padding-bottom: 0;
             }
 
                 #gallery .container {
-                    padding-top: 70px; /* 헤더 공간 띄우기 */
-                    justify-content: center; /* 전체 콘텐츠 수직 중앙 정렬 */
+                    padding-top: 70px;
+                    justify-content: center; /* 전체 그룹 중앙 정렬 */
+                }
+
+                #gallery .section-title {
+                    margin-top: 40px; /* 타이틀을 아래로 더 내림 */
+                    margin-bottom: 10px; /* 사진과의 간격을 줄여 사진을 위로 올림 */
+                }
+
+                #gallery .section-content {
+                    flex-grow: 0; /* 컨텐츠 영역이 남은 공간 전체를 차지하지 않도록 해제 (위로 올라감) */
+                    padding-bottom: 0;
                 }
 
             .gallery-arrow {
@@ -755,8 +765,9 @@
             }
             /* 모바일에서는 너비 확장 */
             .gallery-swiper {
-                height: 55vh;
+                height: 50vh;
             }
+            /* 높이 최적화 */
 
             /* 공간(SPACE) 도면 2개가 한 화면에 쏙 들어가도록 핏 조절 */
             #space {
@@ -777,7 +788,6 @@
             }
 
             /* 장비 및 대관 모바일 높이 설정 */
-            /* 스냅스크롤을 위해 섹션 높이를 다시 100dvh로 맞추고 내부 스크롤 허용 */
             section {
                 height: 100dvh;
                 padding-bottom: 0;
@@ -905,8 +915,13 @@
                         </div>
                     </div>
 
-                    <!-- 헤더 우측 컨트롤 (햄버거 버튼만 위치) -->
+                    <!-- 헤더 우측 컨트롤 (모바일 언어선택 및 햄버거 버튼) -->
                     <div class="header-controls">
+                        <div class="lang-switch mobile-only">
+                            <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
+                            <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
+                            <a class="lang-btn" onclick="setLanguage('JP'); closeMobileMenu();">JP</a>
+                        </div>
                         <div class="hamburger" onclick="toggleMobileMenu()" title="Menu">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
                         </div>
@@ -1091,7 +1106,7 @@
                         <li><span class="model">금, 일, 공휴일</span><span class="brand">880,000 KRW</span></li>
                         <li><span class="model">토요일</span><span class="brand">980,000 KRW</span></li>
                         <li><span class="model text-gray-400">* 기본 6시간 30분 기준 (셋팅/리허설/공연/철수)</span></li>
-                        <li><span class="model text-gray-400">* 초 시 시간당 10만원 추가 비용 발생</span></li>
+                        <li><span class="model text-gray-400">* 초과 시 시간당 10만원 추가 비용 발생</span></li>
                         <li><span class="model text-gray-400">* 부가세 별도 10%</span></li>
                     `,
                 list_rental_policy: `
