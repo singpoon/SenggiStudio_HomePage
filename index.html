@@ -214,6 +214,7 @@
         section {
             scroll-snap-align: start;
             height: 100vh;
+            height: 100dvh; /* 모바일 환경 최적화 */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -300,7 +301,7 @@
 
         /* About 섹션 내 SNS 링크 */
         .about-social-links {
-            display: flex;
+            display: none; /* PC에서는 숨김 처리 */
             gap: 20px;
             margin-top: 40px;
             justify-content: center;
@@ -677,23 +678,24 @@
                 gap: 30px;
             }
 
-            /* About 모바일 중앙 밀집 설정 */
+            /* About 모바일 완벽한 한 화면 핏 및 중앙 밀집 설정 */
             .about-logo {
-                width: 200px;
-                margin-bottom: 20px;
+                width: 180px;
+                margin-bottom: 15px;
             }
 
             .about-text {
-                font-size: 1.15rem;
-                line-height: 1.8;
-                max-width: 85%;
+                font-size: 1.05rem;
+                line-height: 1.6;
+                max-width: 90%;
             }
 
             .about-social-links {
-                margin-top: 25px;
+                display: flex;
+                margin-top: 20px;
                 gap: 15px;
             }
-
+                /* 모바일에서만 보임 */
                 .about-social-links svg {
                     width: 20px;
                     height: 20px;
