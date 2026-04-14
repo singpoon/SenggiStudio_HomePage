@@ -14,6 +14,7 @@
             --black: #000;
             --dark-bg: #0a0a0a;
             --senggi-red: #f9361c;
+            --senggi-blue: #1c7ef9;
             --white: #ffffff;
             --gray: #888;
             --border: rgba(255, 255, 255, 0.1);
@@ -79,7 +80,6 @@
             z-index: 1000;
         }
 
-            /* PC에서 메뉴가 양끝으로 적절히 벌어지도록 max-width 설정 확대 */
             header .container {
                 max-width: 1600px;
                 margin: 0 auto;
@@ -92,11 +92,10 @@
             align-items: center;
         }
 
-        /* 로고 및 언어 스위치 그룹 */
         .nav-left {
             display: flex;
             align-items: center;
-            gap: 40px; /* PC에서 로고와 언어메뉴 사이 간격 확대 */
+            gap: 30px;
         }
 
         .logo {
@@ -107,7 +106,7 @@
         }
 
             .logo img {
-                height: 60px; /* 로고 크기 */
+                height: 60px;
                 width: auto;
                 object-fit: contain;
                 transition: var(--transition);
@@ -122,7 +121,6 @@
             align-items: center;
         }
 
-        /* PC용 메뉴 컨테이너 */
         .menu-wrapper {
             display: flex;
             align-items: center;
@@ -166,11 +164,10 @@
             display: none;
         }
 
-        /* 언어 선택 버튼 */
         .lang-switch {
             display: flex;
-            gap: 12px;
-            font-size: 1.15rem; /* PC 메뉴 폰트 크기와 동일하게 수정 */
+            gap: 10px;
+            font-size: 1.15rem;
         }
 
         .lang-btn {
@@ -179,7 +176,6 @@
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
-            font-size: 1.15rem; /* PC 메뉴 크기와 동일하게 확대 */
         }
 
             .lang-btn.active {
@@ -187,7 +183,6 @@
                 font-weight: 700;
             }
 
-        /* 헤더 우측 컨트롤 (햄버거) */
         .header-controls {
             display: flex;
             align-items: center;
@@ -211,7 +206,7 @@
         section {
             scroll-snap-align: start;
             height: 100vh;
-            height: 100dvh; /* 모바일 환경 최적화 */
+            height: 100dvh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -231,7 +226,6 @@
             z-index: 10;
         }
 
-        /* 공통 70% 너비 및 중앙 정렬 적용, 내부 스크롤 허용 */
         .section-content {
             flex-grow: 1;
             display: flex;
@@ -239,7 +233,7 @@
             width: 70%;
             margin: 0 auto;
             padding-bottom: 20px;
-            overflow-y: auto; /* 내부 스크롤 허용 */
+            overflow-y: auto;
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
@@ -248,7 +242,6 @@
                 display: none;
             }
 
-            /* Flexbox safe centering trick */
             .section-content::before,
             .section-content::after {
                 content: '';
@@ -272,7 +265,6 @@
             background-position: center;
             background-repeat: no-repeat;
             padding-top: 70px;
-            min-height: 100vh;
             min-height: 100dvh;
         }
 
@@ -311,7 +303,6 @@
                 font-weight: 700;
             }
 
-        /* About 섹션 내 SNS 링크 (PC, 모바일 모두 노출) */
         .about-social-links {
             display: flex;
             gap: 25px;
@@ -353,7 +344,7 @@
             }
         }
 
-        /* [Gallery - Swiper 캐러셀] */
+        /* [Gallery - Swiper] */
         .gallery-slider-wrapper {
             position: relative;
             width: 100%;
@@ -425,10 +416,6 @@
             justify-content: center;
             transition: transform 0.2s ease;
         }
-
-            .gallery-arrow:active {
-                transform: translateY(-50%) scale(0.9);
-            }
 
             .gallery-arrow::before {
                 content: '';
@@ -514,6 +501,13 @@
                 object-fit: contain;
             }
 
+        .capacity-info {
+            margin-top: 15px;
+            color: var(--gray);
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
         /* [Equipment] */
         .equip-grid {
             display: grid;
@@ -529,15 +523,6 @@
             padding: 0;
             border: none;
             text-align: center;
-        }
-
-        .equip-sub-label {
-            font-size: 0.75rem;
-            color: var(--gray);
-            text-transform: uppercase;
-            margin: 8px 0 8px 0;
-            font-weight: 800;
-            letter-spacing: 0.5px;
         }
 
         .equip-item-list {
@@ -615,35 +600,54 @@
                     white-space: nowrap;
                 }
 
-        .text-gray-400 {
+        /* [Schedule] */
+        .calendar-wrapper {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .calendar-legend {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-size: 0.8rem;
             color: var(--gray);
-            font-size: 0.85rem;
-            font-weight: 400;
+            font-weight: 500;
+            padding-right: 5px;
         }
 
-        .contact-link {
-            color: inherit;
-            text-decoration: none;
-            border-bottom: 1px solid var(--white);
-            transition: 0.3s;
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-            .contact-link:hover {
-                color: var(--senggi-red);
-                border-color: var(--senggi-red);
+        .legend-circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+            .legend-circle.red {
+                background-color: var(--senggi-red);
             }
 
-        /* [Schedule] */
+            .legend-circle.blue {
+                background-color: var(--senggi-blue);
+            }
+
         .calendar-container {
             width: 100%;
             height: 60vh;
             background: #000;
-            margin: 0 auto;
             border: none;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: none;
-            flex-shrink: 0;
         }
 
             .calendar-container iframe {
@@ -694,13 +698,14 @@
             }
 
             section {
-                padding-top: 100px;
-                scroll-snap-align: start; /* 섹션 스냅 활성화 */
+                padding-top: 100px !important; /* 모든 섹션 타이틀 높이 장비에 맞춰 통일 */
+                scroll-snap-align: start;
             }
 
             .section-title {
                 font-size: 2rem;
-                margin-bottom: 15px;
+                margin-top: 0 !important;
+                margin-bottom: 20px;
             }
 
             .space-grid, .equip-grid, .rental-grid {
@@ -708,116 +713,73 @@
                 gap: 30px;
             }
 
-            /* About 모바일 내용을 다시 중앙 쪽으로 조절 (기존보다 상향) */
+            /* About 모바일 */
             #about {
-                padding-top: 70px;
+                padding-top: 70px !important;
             }
 
                 #about .container {
-                    padding-top: 2vh; /* 아래로 쏠리던 여백 축소 */
+                    padding-top: 2vh;
                     justify-content: center;
                 }
 
             .about-logo {
                 width: 240px;
-                margin-top: 0;
                 margin-bottom: 25px;
             }
 
-            .about-text {
-                font-size: 1.15rem;
-                line-height: 1.7;
-                max-width: 90%;
-            }
-
-            .about-social-links {
-                margin-top: 25px;
-                gap: 15px;
-            }
-
-                .about-social-links svg {
-                    width: 20px;
-                    height: 20px;
-                }
-
-                .about-social-links a {
-                    padding: 10px;
-                }
-
-            /* 모바일 갤러리 설정 - 타이틀 하향 및 사진 정중앙 */
-            #gallery {
-                padding-bottom: 0;
-            }
-
-                #gallery .container {
-                    padding-top: 0;
-                    justify-content: flex-start;
-                }
-
-                #gallery .section-title {
-                    margin-top: 10vh; /* 스냅 시 타이틀을 좀 더 아래로 */
-                    margin-bottom: 0;
-                }
-
-                #gallery .section-content {
-                    flex-grow: 1;
-                    justify-content: center;
-                    padding-bottom: 0;
-                }
-
-            .gallery-arrow {
-                display: none;
-            }
-
-            .gallery-item-swiper {
-                width: 85%;
+            /* Gallery 모바일 사진 상향 조정 */
+            #gallery .section-content {
+                justify-content: flex-start;
+                margin-top: -10px;
             }
 
             .gallery-swiper {
-                height: 50vh;
-                margin-top: 0;
+                height: 48vh;
             }
 
-            /* 공간(SPACE) 스냅 시 타이틀 하향 이동 */
-            #space {
-                padding-bottom: 20px;
+            /* Space 모바일 도면 2개 한 화면 핏 */
+            #space .space-grid {
+                gap: 10px;
             }
 
-                #space .section-title {
-                    margin-top: 10vh; /* 갤러리와 동일하게 타이틀을 아래로 내림 */
-                }
-
-                #space .space-grid {
-                    gap: 15px;
-                }
-
-                #space .subtitle {
-                    margin-bottom: 5px;
-                    font-size: 1.1rem;
-                }
+            #space .subtitle {
+                margin-bottom: 3px;
+                font-size: 1rem;
+            }
 
             .floorplan-img-wrapper {
-                height: 26vh;
+                height: 25vh;
+            }
+
+            .capacity-info {
+                margin-top: 5px;
+                font-size: 0.8rem;
             }
 
             /* 장비 및 대관 모바일 높이 설정 */
-            section {
+            section#equipment, section#rental {
                 height: 100dvh;
-                padding-bottom: 0;
             }
 
             .rental-item-list li {
                 min-height: auto;
-                padding: 15px 0;
+                padding: 12px 0;
             }
 
-            /* 모바일 헤더 레이아웃 최적화 */
+            /* 범례 모바일 조정 */
+            .calendar-legend {
+                margin-bottom: 5px;
+                font-size: 0.7rem;
+            }
+
+            /* 헤더 모바일 */
             .nav-left {
                 gap: 15px;
             }
 
             .logo img {
-                height: 40px;
+                height: 45px;
             }
 
             .header-controls {
@@ -830,9 +792,8 @@
                 margin-left: 0;
             }
 
-            /* 모바일 언어 버튼 크기 조절 */
             .lang-btn {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             /* 풀스크린 네비게이션 메뉴 오버레이 */
@@ -868,15 +829,6 @@
                         .menu-wrapper ul li a {
                             font-size: 1.5rem;
                         }
-
-                .menu-wrapper .tools {
-                    flex-direction: column;
-                    margin-left: 0;
-                    padding-left: 0;
-                    border-left: none;
-                    gap: 30px;
-                    margin-top: 30px;
-                }
         }
     </style>
 </head>
@@ -884,12 +836,11 @@
 
     <header>
         <div class="container">
-            <nav style="width: 100%;">
+            <nav>
                 <div class="nav-left">
                     <a href="#about" class="logo">
                         <img src="SenggiALTLogosIMAGE-02.png" alt="Senggi Logo">
                     </a>
-                    <!-- 언어선택 (메인 로고 우측, PC/모바일 공통 노출) -->
                     <div class="lang-switch">
                         <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
                         <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
@@ -907,8 +858,6 @@
                             <li><a href="#schedule" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_schedule">SCHEDULE</a></li>
                         </ul>
                     </div>
-
-                    <!-- 헤더 우측 컨트롤 (햄버거 버튼) -->
                     <div class="header-controls">
                         <div class="hamburger" onclick="toggleMobileMenu()" title="Menu">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
@@ -929,8 +878,6 @@
                     음악을 중심으로 다양한 프로젝트와 경험이<br>
                     교차하고 이어지는 공간입니다.
                 </div>
-
-                <!-- 소개 하단 SNS 링크 (PC, 모바일 모두 표시) -->
                 <div class="about-social-links">
                     <a href="https://www.instagram.com/senggistudio" target="_blank" title="Instagram">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
@@ -945,7 +892,7 @@
             </div>
         </section>
 
-        <!-- 2. GALLERY (Swiper 캐러셀 적용) -->
+        <!-- 2. GALLERY -->
         <section id="gallery">
             <div class="container">
                 <h3 class="section-title" data-i18n="m_gallery">GALLERY</h3>
@@ -954,9 +901,7 @@
                         <div class="gallery-swiper-container">
                             <button class="gallery-arrow prev-arrow"></button>
                             <div class="swiper gallery-swiper">
-                                <div class="swiper-wrapper" id="gallery-track">
-                                    <!-- JS에서 이미지가 주입됩니다 -->
-                                </div>
+                                <div class="swiper-wrapper" id="gallery-track"></div>
                             </div>
                             <button class="gallery-arrow next-arrow"></button>
                         </div>
@@ -977,12 +922,14 @@
                             <div class="floorplan-img-wrapper">
                                 <img src="SenggiStudio_FloorPlan_5FLiveHall.png" alt="5F LIVE HALL 도면">
                             </div>
+                            <div class="capacity-info" data-i18n="s_cap_5f">수용인원 스탠딩 100, 좌석 65 (문의)</div>
                         </div>
                         <div class="space-col">
                             <div class="subtitle">ROOFTOP</div>
                             <div class="floorplan-img-wrapper">
                                 <img src="SenggiStudio_FloorPlan_Rooftop.png" alt="ROOFTOP 도면">
                             </div>
+                            <div class="capacity-info" data-i18n="s_cap_roof">수용인원 약 80명</div>
                         </div>
                     </div>
                 </div>
@@ -1059,8 +1006,21 @@
             <div class="container">
                 <h3 class="section-title" data-i18n="m_schedule">SCHEDULE</h3>
                 <div class="section-content">
-                    <div class="calendar-container">
-                        <iframe src="https://calendar.google.com/calendar/embed?src=27b6e36424d080e5f5b71bc21dd89d097bc37d0bfc6297a5af83084d4c1f47e7%40group.calendar.google.com&ctz=Asia%2FSeoul&color=%23f9361c" scrolling="no"></iframe>
+                    <div class="calendar-wrapper">
+                        <!-- 캘린더 범례 추가 -->
+                        <div class="calendar-legend">
+                            <div class="legend-item">
+                                <span class="legend-circle red"></span>
+                                <span data-i18n="sched_booked">대관 완료</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-circle blue"></span>
+                                <span data-i18n="sched_pending">협의중</span>
+                            </div>
+                        </div>
+                        <div class="calendar-container">
+                            <iframe src="https://calendar.google.com/calendar/embed?src=27b6e36424d080e5f5b71bc21dd89d097bc37d0bfc6297a5af83084d4c1f47e7%40group.calendar.google.com&ctz=Asia%2FSeoul&color=%23f9361c" scrolling="no"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1077,6 +1037,8 @@
                 a_content: "<b>Senggi Studio</b>는 경계 없는 창작 활동을 지향하며,<br>음악을 중심으로 다양한 프로젝트와 경험이<br>교차하고 이어지는 공간입니다.",
                 e_cat_amps_mics: "AMPLIFIERS<br>& MICROPHONES", e_cat_instr_dj: "INSTRUMENTS<br>& DJ", e_cat_sys: "SOUND<br>& LIGHT",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
+                s_cap_5f: "수용인원 스탠딩 100, 좌석 65 (문의)", s_cap_roof: "수용인원 약 80명",
+                sched_booked: "대관 완료", sched_pending: "협의중",
 
                 list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb (1967)</span><span class="brand">Fender</span></li><li><span class="model">Custom 262 (1962)</span><span class="brand">Magnaton</span></li>`,
                 list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360 (1972)</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135 (1973)</span><span class="brand">Fender</span></li>`,
@@ -1115,10 +1077,12 @@
                     `
             },
             EN: {
-                m_about: "ABOUT", m_gallery: "GALLERY", m_space: "SPACE", m_equip: "EQUIPMENT", m_rental: "RENTAL", m_schedule: "SCHEDULE",
+                m_about: "About", m_gallery: "Gallery", m_space: "Space", m_equip: "Equipment", m_rental: "Rental", m_schedule: "Schedule",
                 a_content: "<b>Senggi Studio</b> pursues boundless creative activities,<br>serving as a space where various projects and experiences<br>intersect and connect, centered around music.",
                 e_cat_amps_mics: "AMPLIFIERS<br>& MICROPHONES", e_cat_instr_dj: "INSTRUMENTS<br>& DJ", e_cat_sys: "SOUND<br>& LIGHT",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
+                s_cap_5f: "Capacity: Standing 100, Seated 65 (Inquiry)", s_cap_roof: "Capacity: approx. 80 people",
+                sched_booked: "Confirmed", sched_pending: "Pending",
 
                 list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb</span><span class="brand">Fender</span></li><li><span class="model">Custom 262</span><span class="brand">Magnaton</span></li>`,
                 list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135</span><span class="brand">Fender</span></li>`,
@@ -1157,10 +1121,12 @@
                     `
             },
             JP: {
-                m_about: "紹介", m_gallery: "ギャラリー", m_space: "空間", m_equip: "機재", m_rental: "レンタル", m_schedule: "スケジュール",
-                a_content: "<b>Senggi Studio</b>は境界のない創作活動를 志向し、<br>音楽を中心に多様なプロジェクトと経験が<br>交差し繋がる空間です。",
-                e_cat_amps_mics: "アンプ<br>& マ이크", e_cat_instr_dj: "楽器<br>& DJ機材", e_cat_sys: "音響<br>& 照明",
+                m_about: "紹介", m_gallery: "ギャラリー", m_space: "空間", m_equip: "機材", m_rental: "レンタル", m_schedule: "スケジュール",
+                a_content: "<b>Senggi Studio</b>は境界のない創作活動を志向し、<br>音楽を中心に多様なプロジェクトと経験が<br>交差し繋がる空間です。",
+                e_cat_amps_mics: "アンプ<br>& 마이크", e_cat_instr_dj: "楽器<br>& DJ機材", e_cat_sys: "音響<br>& 照明",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
+                s_cap_5f: "収容人数：スタンディング100, 座席65 (お問合せ)", s_cap_roof: "収容人数：約80名",
+                sched_booked: "予約完了", sched_pending: "協議中",
 
                 list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb</span><span class="brand">Fender</span></li><li><span class="model">Custom 262</span><span class="brand">Magnaton</span></li>`,
                 list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135</span><span class="brand">Fender</span></li>`,
@@ -1191,7 +1157,7 @@
                     `,
                 list_rental_booking: `
                         <li><span class="model">プロジェクター & TV: 各5万ウォン</span></li>
-                        <li><span class="model">멀티트랙 녹음: 5만ウォン (Mac用HDD)</span></li>
+                        <li><span class="model">マルチトラック録音: 5万ウォン (Mac用HDD)</span></li>
                         <li><span class="model font-bold">予約金30万ウォンで確定</span></li>
                         <li><span class="model" style="color:var(--senggi-red);">※ スケジュールは SCHEDULE セクション確認</span></li>
                         <li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>
@@ -1226,7 +1192,6 @@
             document.getElementById('mobile-menu-wrapper').classList.remove('active');
         }
 
-        // [갤러리 이미지 데이터 로드 및 Swiper 초기화]
         const galleryImages = [
             "5f_01.jpg", "5f_02.jpg", "5f_03.jpg", "5f_04.jpg", "5f_05.jpg",
             "5f_06.jpg", "5f_07.jpg", "5f_08.jpg", "5f_09.jfif", "5f_10.jpg",
@@ -1237,7 +1202,6 @@
         function renderGallery() {
             const track = document.getElementById('gallery-track');
             if (!track) return;
-
             galleryImages.forEach((src) => {
                 const slide = document.createElement('div');
                 slide.className = 'swiper-slide gallery-item-swiper';
@@ -1247,7 +1211,6 @@
                 track.appendChild(slide);
             });
 
-            // Swiper JS 인스턴스 초기화
             new Swiper('.gallery-swiper', {
                 slidesPerView: 'auto',
                 centeredSlides: true,
@@ -1293,8 +1256,6 @@
             }, observerOptions);
 
             sections.forEach((section) => observer.observe(section));
-
-            // Swiper 기반 갤러리 렌더링 호출
             renderGallery();
         });
 
