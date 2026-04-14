@@ -164,7 +164,6 @@
             display: none;
         }
 
-        /* 언어 선택 버튼 */
         .lang-switch {
             display: flex;
             gap: 12px;
@@ -177,7 +176,6 @@
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
-            font-size: 1.15rem;
         }
 
             .lang-btn.active {
@@ -218,14 +216,15 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 3rem; /* 크기 약간 확대 */
             font-weight: 900;
             margin: 0 0 25px 0;
             text-align: center;
-            letter-spacing: 12px;
+            letter-spacing: 6px; /* 자간 좁힘 */
             text-transform: uppercase;
             flex-shrink: 0;
             z-index: 10;
+            color: var(--senggi-red); /* 색상 빨간색으로 변경 */
         }
 
         .section-content {
@@ -609,7 +608,7 @@
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
-            touch-action: pan-y; /* 스와이프 감지를 위해 y축 스크롤은 유지 */
+            touch-action: pan-y;
         }
 
         .calendar-legend {
@@ -702,22 +701,18 @@
             }
 
             section {
-                padding-top: 110px !important; /* 모든 타이틀 높이 장비에 맞춰 통일 */
+                padding-top: 110px !important;
                 scroll-snap-align: start;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
                 margin-top: 0 !important;
                 margin-bottom: 20px;
+                letter-spacing: 4px;
             }
 
-            .space-grid, .equip-grid, .rental-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            /* About 모바일 - 요청에 따라 살짝 상향 조정 */
+            /* About 모바일 - 텍스트 및 로고 축소 */
             #about {
                 padding-top: 70px !important;
             }
@@ -728,14 +723,21 @@
                 }
 
             .about-logo {
-                width: 240px;
-                margin-bottom: 25px;
+                width: 180px;
+                margin-bottom: 20px;
             }
+            /* 로고 축소 */
+            .about-text {
+                font-size: 1rem;
+                line-height: 1.6;
+                max-width: 85%;
+            }
+            /* 텍스트 축소 */
 
             /* Gallery 모바일 사진 중앙 배치 위해 위로 이동 */
             #gallery .section-content {
                 justify-content: flex-start;
-                margin-top: -30px; /* 더 위로 올려서 시각적 중앙 확보 */
+                margin-top: -60px; /* 사진 위치 더 상향 조정 */
             }
 
             .gallery-swiper {
@@ -845,6 +847,7 @@
                     <a href="#about" class="logo">
                         <img src="SenggiALTLogosIMAGE-02.png" alt="Senggi Logo">
                     </a>
+                    <!-- 언어선택 (메인 로고 우측, PC/모바일 공통 노출) -->
                     <div class="lang-switch">
                         <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
                         <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
@@ -862,6 +865,8 @@
                             <li><a href="#schedule" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_schedule">SCHEDULE</a></li>
                         </ul>
                     </div>
+
+                    <!-- 헤더 우측 컨트롤 (햄버거 버튼) -->
                     <div class="header-controls">
                         <div class="hamburger" onclick="toggleMobileMenu()" title="Menu">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
@@ -882,6 +887,8 @@
                     음악을 중심으로 다양한 프로젝트와 경험이<br>
                     교차하고 이어지는 공간입니다.
                 </div>
+
+                <!-- 소개 하단 SNS 링크 (PC, 모바일 모두 표시) -->
                 <div class="about-social-links">
                     <a href="https://www.instagram.com/senggistudio" target="_blank" title="Instagram">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
@@ -896,7 +903,7 @@
             </div>
         </section>
 
-        <!-- 2. GALLERY -->
+        <!-- 2. GALLERY (Swiper 캐러셀 적용) -->
         <section id="gallery">
             <div class="container">
                 <h3 class="section-title" data-i18n="m_gallery">GALLERY</h3>
@@ -1011,6 +1018,7 @@
                 <h3 class="section-title" data-i18n="m_schedule">SCHEDULE</h3>
                 <div class="section-content">
                     <div class="calendar-wrapper" id="calendar-swipe-area">
+                        <!-- 캘린더 범례 추가 -->
                         <div class="calendar-legend">
                             <div class="legend-item">
                                 <span class="legend-circle red"></span>
@@ -1125,7 +1133,7 @@
             },
             JP: {
                 m_about: "紹介", m_gallery: "ギャラリー", m_space: "空間", m_equip: "機材", m_rental: "レンタル", m_schedule: "スケジュール",
-                a_content: "<b>Senggi Studio</b>は境界のない創作活動を志向し、<br>音楽を中心に多様なプロジェクトと経験が<br>交差し繋がる空間です。",
+                a_content: "<b>Senggi Studio</b>는 경계 없는 창작 활동을 지향하며,<br>음악을 중심으로 다양한 프로젝트와 경험이<br>교차하고 이어지는 공간입니다.",
                 e_cat_amps_mics: "アンプ<br>& 마이크", e_cat_instr_dj: "楽器<br>& DJ機材", e_cat_sys: "音響<br>& 照明",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
                 s_cap_5f: "収容人数：スタンディング100, 座席65 (お問合せ)", s_cap_roof: "収容人数：約80名",
@@ -1195,7 +1203,6 @@
             document.getElementById('mobile-menu-wrapper').classList.remove('active');
         }
 
-        // [갤러리 데이터 및 스와이퍼]
         const galleryImages = [
             "5f_01.jpg", "5f_02.jpg", "5f_03.jpg", "5f_04.jpg", "5f_05.jpg",
             "5f_06.jpg", "5f_07.jpg", "5f_08.jpg", "5f_09.jfif", "5f_10.jpg",
@@ -1235,7 +1242,6 @@
             });
         }
 
-        // [구글 캘린더 스와이프 제어 로직]
         let currentCalDate = new Date();
         const baseCalUrl = "https://calendar.google.com/calendar/embed?src=27b6e36424d080e5f5b71bc21dd89d097bc37d0bfc6297a5af83084d4c1f47e7%40group.calendar.google.com&ctz=Asia%2FSeoul&color=%23f9361c";
 
@@ -1254,10 +1260,10 @@
             area.addEventListener('touchend', (e) => {
                 let endX = e.changedTouches[0].clientX;
                 let diffX = startX - endX;
-                if (Math.abs(diffX) > 50) { // 50px 이상 드래그 시 작동
-                    if (diffX > 0) { // 왼쪽으로 스와이프 -> 다음달
+                if (Math.abs(diffX) > 50) {
+                    if (diffX > 0) {
                         currentCalDate.setMonth(currentCalDate.getMonth() + 1);
-                    } else { // 오른쪽으로 스와이프 -> 이전달
+                    } else {
                         currentCalDate.setMonth(currentCalDate.getMonth() - 1);
                     }
                     updateCalendarView();
