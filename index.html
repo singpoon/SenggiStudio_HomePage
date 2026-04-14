@@ -575,7 +575,10 @@
             .section-content {
                 width: 100%;
                 padding: 0 10px;
+                overflow-y: auto;
+                scroll-snap-type: none;
             }
+            /* 내부 스냅 삭제 */
 
             section {
                 padding-top: 110px !important;
@@ -594,7 +597,7 @@
                 width: 100%;
             }
 
-            /* About 모바일 */
+            /* About 모바일 - 텍스트 및 로고 축소 */
             #about .container {
                 padding-top: 5vh;
                 justify-content: center;
@@ -606,12 +609,12 @@
             }
 
             .about-text {
-                font-size: 0.9rem;
+                font-size: 0.92rem;
                 line-height: 1.7;
                 max-width: 90%;
             }
 
-            /* Gallery 모바일 */
+            /* Gallery 모바일 - 사진 상단 배치 */
             #gallery .section-content {
                 justify-content: flex-start;
                 margin-top: -40px;
@@ -621,10 +624,10 @@
                 height: 48vh;
             }
 
-            /* 세로로 배치 (Space, Equipment, Rental) */
+            /* 세로로 배치 및 간격 좁힘 */
             .space-grid, .equip-grid, .rental-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 25px; /* 간격 대폭 축소 */
             }
 
             .floorplan-img-wrapper {
@@ -637,17 +640,38 @@
                 margin-bottom: 10px;
             }
 
-            /* Rental 모바일 텍스트 정렬 */
-            .rental-item-list li span.model {
-                text-align: center;
-                padding-right: 0;
-                margin-bottom: 5px;
+            /* 장비 리스트 밀도 높이기 */
+            .equip-item-list li {
+                padding-bottom: 2px;
+                margin-bottom: 2px;
             }
 
+                .equip-item-list li span.model {
+                    font-size: 0.85rem;
+                }
+
+                .equip-item-list li span.brand {
+                    margin-top: 1px;
+                }
+
+            /* 대관 리스트 밀도 높이기 */
             .rental-item-list li {
                 flex-direction: column;
                 text-align: center;
+                min-height: auto;
+                padding: 4px 0; /* 패딩 축소 */
             }
+
+                .rental-item-list li span.model {
+                    text-align: center;
+                    padding-right: 0;
+                    margin-bottom: 2px;
+                    font-size: 0.85rem;
+                }
+
+                .rental-item-list li span.brand {
+                    font-size: 0.95rem;
+                }
 
             /* 헤더 모바일 */
             .nav-left {
@@ -716,6 +740,7 @@
                     <a href="#about" class="logo">
                         <img src="SenggiALTLogosIMAGE-02.png" alt="Senggi Logo">
                     </a>
+                    <!-- 언어선택 (메인 로고 우측) -->
                     <div class="lang-switch">
                         <a class="lang-btn active" onclick="setLanguage('KR'); closeMobileMenu();">KR</a>
                         <a class="lang-btn" onclick="setLanguage('EN'); closeMobileMenu();">EN</a>
@@ -916,13 +941,11 @@
                         <li><span class="model">월 ~ 목요일</span><span class="brand">680,000 KRW</span></li>
                         <li><span class="model">금, 일, 공휴일</span><span class="brand">880,000 KRW</span></li>
                         <li><span class="model">토요일</span><span class="brand">980,000 KRW</span></li>
-                        <li><span class="model text-gray-400">* 기본 6.5시간 (셋팅/리허설/공연/철수)</span></li>
-                        <li><span class="model text-gray-400">* 초과 시 시간당 10만원 추가</span></li>
                     `,
                 list_rental_policy: `
                         <li><span class="model">음향 엔지니어 1인 인건비 포함</span></li>
-                        <li><span class="model">모든 수익(티켓/굿즈 등) 100% 주최측 귀속</span></li>
-                        <li><span class="model">티켓팅 및 운영은 주최측 직접 진행</span></li>
+                        <li><span class="model">모든 수익(티켓/굿즈 등)은 100% 주최측 귀속</span></li>
+                        <li><span class="model">티켓팅 및 운영 직접 진행</span></li>
                         <li><span class="model">프리드링크 및 외부 케이터링 협의 가능</span></li>
                     `,
                 list_rental_booking: `
@@ -943,7 +966,7 @@
                 list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb</span><span class="brand">Fender</span></li>`,
                 list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360</span><span class="brand">Acoustic</span></li>`,
                 list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 / SM57 / KSM8</span><span class="brand">Shure</span></li>`,
-                list_drums: `<li><span class="brand text-gray-400 mb-1">Drums & Percussion</span><span class="model">USA Custom Kit</span><span class="brand">Gretsch</span></li>`,
+                list_drums: `<li><span class="brand text-gray-400 mb-1">Drums</span><span class="model">USA Custom Kit</span><span class="brand">Gretsch</span></li>`,
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 / DJM 900</span><span class="brand">Pioneer</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">WING Digital</span><span class="brand">Behringer</span></li>`,
@@ -957,19 +980,18 @@
                         <li><span class="model">Sat</span><span class="brand">980,000 KRW</span></li>
                     `,
                 list_rental_policy: `
-                        <li><span class="model">Sound engineer labor included</span></li>
-                        <li><span class="model">100% revenue belongs to organizer</span></li>
-                        <li><span class="model">Ticketing by organizer</span></li>
+                        <li><span class="model">Engineer labor included</span></li>
+                        <li><span class="model">100% revenue to organizer</span></li>
                     `,
                 list_rental_booking: `
                         <li><span class="model">Projector & TV: 50k KRW</span></li>
-                        <li><span class="model">Multitrack: 50k (Bring your Mac HDD)</span></li>
+                        <li><span class="model">Record: 50k (Bring Mac HDD)</span></li>
                         <li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>
                     `
             },
             JP: {
                 m_about: "紹介", m_gallery: "ギャラリー", m_space: "空間", m_equip: "機材", m_rental: "レンタル", m_schedule: "スケジュール",
-                a_content: "<b>Senggi Studio</b>는 경계 없는 창작 활동을 지향하며,<br>음악을 중심으로 다양한 프로젝트와 경험이<br>교차하고 이어지는 공간입니다.",
+                a_content: "<b>Senggi Studio</b>は境界のない創作活動を志向し、<br>音楽を中心に多様なプロジェクトと経験が<br>交差し繋がる空間です。",
                 e_cat_amps_mics: "アンプ<br>& 마이크", e_cat_instr_dj: "楽器<br>& DJ機材", e_cat_sys: "音響<br>& 照明",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
                 s_cap_5f: "収容人数：スタンディング100, 座席65", s_cap_roof: "収容人数：約80名",
@@ -982,7 +1004,7 @@
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000</span><span class="brand">Pioneer</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">WING Digital</span><span class="brand">Behringer</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">Mackie SRM 450</span><span class="brand">Mackie</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">SRM 450</span><span class="brand">Mackie</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting</span><span class="model">Wireless Tubes</span><span class="brand">Astera</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS</span><span class="model">Logic Pro X</span><span class="brand">Apple</span></li>`,
 
@@ -992,7 +1014,7 @@
                         <li><span class="model">土曜日</span><span class="brand">980,000 KRW</span></li>
                     `,
                 list_rental_policy: `
-                        <li><span class="model">音響エンジニア1名込み</span></li>
+                        <li><span class="model">エンジニア1名込み</span></li>
                         <li><span class="model">公演収益は100%主催者に帰属</span></li>
                     `,
                 list_rental_booking: `
