@@ -164,9 +164,10 @@
             display: none;
         }
 
+        /* 언어 선택 버튼 */
         .lang-switch {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             font-size: 1.15rem;
         }
 
@@ -176,6 +177,7 @@
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
+            font-size: 1.15rem;
         }
 
             .lang-btn.active {
@@ -607,6 +609,7 @@
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
+            touch-action: pan-y; /* 스와이프 감지를 위해 y축 스크롤은 유지 */
         }
 
         .calendar-legend {
@@ -648,6 +651,7 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: none;
+            position: relative;
         }
 
             .calendar-container iframe {
@@ -698,7 +702,7 @@
             }
 
             section {
-                padding-top: 100px !important; /* 모든 섹션 타이틀 높이 장비에 맞춰 통일 */
+                padding-top: 110px !important; /* 모든 타이틀 높이 장비에 맞춰 통일 */
                 scroll-snap-align: start;
             }
 
@@ -713,7 +717,7 @@
                 gap: 30px;
             }
 
-            /* About 모바일 */
+            /* About 모바일 - 요청에 따라 살짝 상향 조정 */
             #about {
                 padding-top: 70px !important;
             }
@@ -728,17 +732,17 @@
                 margin-bottom: 25px;
             }
 
-            /* Gallery 모바일 사진 상향 조정 */
+            /* Gallery 모바일 사진 중앙 배치 위해 위로 이동 */
             #gallery .section-content {
                 justify-content: flex-start;
-                margin-top: -10px;
+                margin-top: -30px; /* 더 위로 올려서 시각적 중앙 확보 */
             }
 
             .gallery-swiper {
-                height: 48vh;
+                height: 52vh;
             }
 
-            /* Space 모바일 도면 2개 한 화면 핏 */
+            /* Space 모바일 도면 핏 */
             #space .space-grid {
                 gap: 10px;
             }
@@ -758,7 +762,7 @@
             }
 
             /* 장비 및 대관 모바일 높이 설정 */
-            section#equipment, section#rental {
+            section#equipment, section#rental, section#schedule {
                 height: 100dvh;
             }
 
@@ -793,7 +797,7 @@
             }
 
             .lang-btn {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
 
             /* 풀스크린 네비게이션 메뉴 오버레이 */
@@ -1006,8 +1010,7 @@
             <div class="container">
                 <h3 class="section-title" data-i18n="m_schedule">SCHEDULE</h3>
                 <div class="section-content">
-                    <div class="calendar-wrapper">
-                        <!-- 캘린더 범례 추가 -->
+                    <div class="calendar-wrapper" id="calendar-swipe-area">
                         <div class="calendar-legend">
                             <div class="legend-item">
                                 <span class="legend-circle red"></span>
@@ -1019,7 +1022,7 @@
                             </div>
                         </div>
                         <div class="calendar-container">
-                            <iframe src="https://calendar.google.com/calendar/embed?src=27b6e36424d080e5f5b71bc21dd89d097bc37d0bfc6297a5af83084d4c1f47e7%40group.calendar.google.com&ctz=Asia%2FSeoul&color=%23f9361c" scrolling="no"></iframe>
+                            <iframe id="google-calendar-iframe" src="https://calendar.google.com/calendar/embed?src=27b6e36424d080e5f5b71bc21dd89d097bc37d0bfc6297a5af83084d4c1f47e7%40group.calendar.google.com&ctz=Asia%2FSeoul&color=%23f9361c" scrolling="no"></iframe>
                         </div>
                     </div>
                 </div>
@@ -1047,7 +1050,7 @@
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">WING Digital / Stage Box</span><span class="brand">Behringer</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">Thump-15 (4) / SRM 450 (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive</span><span class="brand">Vintage</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">Thump-15 (4) / SRM 450</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive</span><span class="brand">Vintage</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 (3) / AX3 (3) Wireless</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
 
@@ -1143,7 +1146,7 @@
                         <li><span class="model">月 ~ 木曜日</span><span class="brand">680,000 KRW</span></li>
                         <li><span class="model">金, 日, 祝日</span><span class="brand">880,000 KRW</span></li>
                         <li><span class="model">土曜日</span><span class="brand">980,000 KRW</span></li>
-                        <li><span class="model text-gray-400">* 基本 6.5時間 (設営/リハ/本番/撤収)</span></li>
+                        <li><span class="model text-gray-400">* 기본 6.5時間 (設営/リハ/本番/撤収)</span></li>
                         <li><span class="model text-gray-400">* 超過時 1時間当たり 10万ウォン</span></li>
                         <li><span class="model text-gray-400">* 付加税 10% 別途</span></li>
                     `,
@@ -1157,8 +1160,8 @@
                     `,
                 list_rental_booking: `
                         <li><span class="model">プロジェクター & TV: 各5万ウォン</span></li>
-                        <li><span class="model">マルチトラック録音: 5万ウォン (Mac用HDD)</span></li>
-                        <li><span class="model font-bold">予約金30万ウォンで確定</span></li>
+                        <li><span class="model">멀티트랙 녹음: 5만ウォン (Mac용HDD)</span></li>
+                        <li><span class="model font-bold">予約금30만ウォンで確定</span></li>
                         <li><span class="model" style="color:var(--senggi-red);">※ スケジュールは SCHEDULE セクション確認</span></li>
                         <li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>
                         <li><span class="model font-bold text-white">E: <a href="mailto:senggistudio@gmail.com" class="contact-link">senggistudio@gmail.com</a><br>T: 010-5354-0193</span></li>
@@ -1192,6 +1195,7 @@
             document.getElementById('mobile-menu-wrapper').classList.remove('active');
         }
 
+        // [갤러리 데이터 및 스와이퍼]
         const galleryImages = [
             "5f_01.jpg", "5f_02.jpg", "5f_03.jpg", "5f_04.jpg", "5f_05.jpg",
             "5f_06.jpg", "5f_07.jpg", "5f_08.jpg", "5f_09.jfif", "5f_10.jpg",
@@ -1231,6 +1235,36 @@
             });
         }
 
+        // [구글 캘린더 스와이프 제어 로직]
+        let currentCalDate = new Date();
+        const baseCalUrl = "https://calendar.google.com/calendar/embed?src=27b6e36424d080e5f5b71bc21dd89d097bc37d0bfc6297a5af83084d4c1f47e7%40group.calendar.google.com&ctz=Asia%2FSeoul&color=%23f9361c";
+
+        function updateCalendarView() {
+            const year = currentCalDate.getFullYear();
+            const month = String(currentCalDate.getMonth() + 1).padStart(2, '0');
+            const dateStr = `${year}${month}01/${year}${month}01`;
+            const newUrl = `${baseCalUrl}&dates=${dateStr}`;
+            document.getElementById('google-calendar-iframe').src = newUrl;
+        }
+
+        function initCalendarSwipe() {
+            const area = document.getElementById('calendar-swipe-area');
+            let startX = 0;
+            area.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+            area.addEventListener('touchend', (e) => {
+                let endX = e.changedTouches[0].clientX;
+                let diffX = startX - endX;
+                if (Math.abs(diffX) > 50) { // 50px 이상 드래그 시 작동
+                    if (diffX > 0) { // 왼쪽으로 스와이프 -> 다음달
+                        currentCalDate.setMonth(currentCalDate.getMonth() + 1);
+                    } else { // 오른쪽으로 스와이프 -> 이전달
+                        currentCalDate.setMonth(currentCalDate.getMonth() - 1);
+                    }
+                    updateCalendarView();
+                }
+            }, { passive: true });
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
             const sections = document.querySelectorAll("section");
             const navLinks = document.querySelectorAll(".nav-link");
@@ -1257,6 +1291,7 @@
 
             sections.forEach((section) => observer.observe(section));
             renderGallery();
+            initCalendarSwipe();
         });
 
         window.onload = () => setLanguage('KR');
