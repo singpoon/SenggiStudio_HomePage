@@ -176,7 +176,6 @@
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
-            font-size: 1.15rem;
         }
 
             .lang-btn.active {
@@ -217,15 +216,15 @@
         }
 
         .section-title {
-            font-size: 3.2rem;
+            font-size: 3.3rem; /* 크기 1포인트 확대 */
             font-weight: 900;
             margin: 0 0 25px 0;
             text-align: center;
-            letter-spacing: 2px;
+            letter-spacing: 1px; /* 자간 좁힘 */
             text-transform: uppercase;
             flex-shrink: 0;
             z-index: 10;
-            color: var(--white);
+            color: var(--white); /* 색상 하얀색 복구 */
         }
 
         .section-content {
@@ -577,18 +576,19 @@
                 width: 100%;
                 padding: 0 10px;
                 overflow-y: auto;
-                scroll-snap-type: none;
+                scroll-snap-type: none !important;
             }
+            /* 내부 스냅 삭제 */
 
             section {
                 padding-top: 110px !important;
-                scroll-snap-align: start;
+                scroll-snap-align: start; /* 큰 섹션 스냅 유지 */
             }
 
             .section-title {
                 font-size: 2.4rem;
                 margin-bottom: 20px;
-                letter-spacing: 3px;
+                letter-spacing: 2px;
             }
 
             .subtitle {
@@ -596,7 +596,7 @@
                 width: 100%;
             }
 
-            /* About 모바일 */
+            /* About 모바일 - 텍스트 및 로고 축소 */
             #about .container {
                 padding-top: 5vh;
                 justify-content: center;
@@ -613,7 +613,7 @@
                 max-width: 90%;
             }
 
-            /* Gallery 모바일 */
+            /* Gallery 모바일 - 사진 상단 배치 */
             #gallery .section-content {
                 justify-content: flex-start;
                 margin-top: -40px;
@@ -921,7 +921,6 @@
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
                 s_cap_5f: "수용인원 스탠딩 100, 좌석 65 (문의)", s_cap_roof: "수용인원 약 80명",
                 sched_booked: "대관 완료", sched_pending: "협의중",
-
                 list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb (1967)</span><span class="brand">Fender</span></li><li><span class="model">Custom 262 (1962)</span><span class="brand">Magnaton</span></li>`,
                 list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360 (1972)</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135 (1973)</span><span class="brand">Fender</span></li>`,
                 list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 (3) / SM57 (5) / KSM8</span><span class="brand">Shure</span></li><li><span class="model">AKG C451B (2) / Sennheiser E904 (3)</span><span class="brand">Misc</span></li><li><span class="model">EV RE-20 / sE V7X / STC-80</span><span class="brand">Misc</span></li>`,
@@ -932,24 +931,9 @@
                 list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">Thump-15 (4) / SRM 450</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive</span><span class="brand">Vintage</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 (3) / AX3 (3) Wireless</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
-
-                list_rental_price: `
-                        <li><span class="model">월 ~ 목요일</span><span class="brand">680,000 KRW</span></li>
-                        <li><span class="model">금, 일, 공휴일</span><span class="brand">880,000 KRW</span></li>
-                        <li><span class="model">토요일</span><span class="brand">980,000 KRW</span></li>
-                    `,
-                list_rental_policy: `
-                        <li><span class="model">음향 엔지니어 1인 인건비 포함</span></li>
-                        <li><span class="model">모든 수익(티켓/굿즈 등)은 100% 주최측 귀속</span></li>
-                        <li><span class="model">티켓팅 및 운영은 주최측 직접 진행</span></li>
-                        <li><span class="model">프리드링크 및 외부 케이터링 협의 가능</span></li>
-                    `,
-                list_rental_booking: `
-                        <li><span class="model">프로젝터 & 아날로그 TV: 각 5만원</span></li>
-                        <li><span class="model">멀티트랙 녹음: 팀당 5만원 (Mac용 저장장치 지참)</span></li>
-                        <li><span class="model font-bold text-white">농협 475817-56-000664 정주영</span></li>
-                        <li><span class="model font-bold text-white">T: 010-5354-0193</span></li>
-                    `
+                list_rental_price: `<li><span class="model">월 ~ 목요일</span><span class="brand">680,000 KRW</span></li><li><span class="model">금, 일, 공휴일</span><span class="brand">880,000 KRW</span></li><li><span class="model">토요일</span><span class="brand">980,000 KRW</span></li>`,
+                list_rental_policy: `<li><span class="model">음향 엔지니어 1인 인건비 포함</span></li><li><span class="model">수익 100% 주최측 귀속</span></li><li><span class="model">티켓팅 직접 진행</span></li>`,
+                list_rental_booking: `<li><span class="model">멀티트랙: 5만원 (Mac용 저장장치 지참)</span></li><li><span class="model font-bold text-white">농협 475817-56-000664</span></li>`
             },
             EN: {
                 m_about: "About", m_gallery: "Gallery", m_space: "Space", m_equip: "Equipment", m_rental: "Rental", m_schedule: "Schedule",
@@ -958,32 +942,29 @@
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
                 s_cap_5f: "Capacity: Standing 100, Seated 65 (Inquiry)", s_cap_roof: "Capacity: approx. 80 people",
                 sched_booked: "Confirmed", sched_pending: "Pending",
-
-                list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb</span><span class="brand">Fender</span></li><li><span class="model">Custom 262</span><span class="brand">Magnaton</span></li>`,
-                list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135</span><span class="brand">Fender</span></li>`,
-                list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 / SM57 / KSM8</span><span class="brand">Shure</span></li><li><span class="model">AKG / Senn / EV</span><span class="brand">Misc</span></li>`,
+                list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb (1967)</span><span class="brand">Fender</span></li><li><span class="model">Custom 262 (1962)</span><span class="brand">Magnaton</span></li>`,
+                list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360 (1972)</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135 (1973)</span><span class="brand">Fender</span></li>`,
+                list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 (3) / SM57 (5) / KSM8</span><span class="brand">Shure</span></li><li><span class="model">AKG C451B (2) / Sennheiser E904 (3)</span><span class="brand">Misc</span></li>`,
                 list_drums: `<li><span class="brand text-gray-400 mb-1">Drums</span><span class="model">USA Custom Kit</span><span class="brand">Gretsch</span></li>`,
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
-                list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 / DJM 900</span><span class="brand">Pioneer</span></li>`,
-                list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">WING Digital</span><span class="brand">Behringer</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">Mackie SRM 450</span><span class="brand">Mackie</span></li>`,
+                list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li>`,
+                list_console: `<li><span class="brand text-gray-400 mb-1">Console</span><span class="model">WING Digital</span><span class="brand">Behringer</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">SRM 450</span><span class="brand">Mackie</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting</span><span class="model">Wireless Tubes</span><span class="brand">Astera</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS</span><span class="model">Logic Pro X</span><span class="brand">Apple</span></li>`,
-
                 list_rental_price: `<li><span class="model">Mon ~ Thu</span><span class="brand">680k KRW</span></li><li><span class="model">Fri ~ Sun</span><span class="brand">880k KRW</span></li>`,
-                list_rental_policy: `<li><span class="model">Engineer included</span></li><li><span class="model">100% Revenue to organizer</span></li>`,
+                list_rental_policy: `<li><span class="model">Engineer labor included</span></li><li><span class="model">100% Revenue to organizer</span></li>`,
                 list_rental_booking: `<li><span class="model">Record: 50k (Bring Mac HDD)</span></li><li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>`
             },
             JP: {
                 m_about: "紹介", m_gallery: "ギャラリー", m_space: "空間", m_equip: "機材", m_rental: "レンタル", m_schedule: "スケジュール",
-                a_content: "<b>Senggi Studio</b>は境界のない創作活動を志向し、<br>音楽を軸に、多様なプロジェクトと経験が<br>交差し、繋がっていく空間です。",
-                e_cat_amps_mics: "アンプ<br>& 마이크", e_cat_instr_dj: "楽器<br>& DJ機材", e_cat_sys: "音響<br>& 照明",
+                a_content: "<b>Senggi Studio</b>は境界のない創作活動を志向し、<br>音楽を軸に、多様なプロジェクトと経験が<br>交差し、繋がっていく空間입니다.",
+                e_cat_amps_mics: "アンプ<br>& マ이크", e_cat_instr_dj: "楽器<br>& DJ機材", e_cat_sys: "音響<br>& 照明",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
                 s_cap_5f: "収容人数：スタンディング100, 座席65", s_cap_roof: "収容人数：約80名",
                 sched_booked: "予約完了", sched_pending: "協議中",
-
-                list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb</span><span class="brand">Fender</span></li><li><span class="model">Custom 262</span><span class="brand">Magnaton</span></li>`,
-                list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135</span><span class="brand">Fender</span></li>`,
+                list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb (1967)</span><span class="brand">Fender</span></li><li><span class="model">Custom 262 (1962)</span><span class="brand">Magnaton</span></li>`,
+                list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360 (1972)</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135 (1973)</span><span class="brand">Fender</span></li>`,
                 list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 / SM57</span><span class="brand">Shure</span></li>`,
                 list_drums: `<li><span class="brand text-gray-400 mb-1">Drums</span><span class="model">USA Custom Kit</span><span class="brand">Gretsch</span></li>`,
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES</span><span class="brand">Yamaha</span></li>`,
@@ -992,10 +973,9 @@
                 list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">Mackie SRM 450</span><span class="brand">Mackie</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting</span><span class="model">Wireless Tubes</span><span class="brand">Astera</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS</span><span class="model">Logic Pro X</span><span class="brand">Apple</span></li>`,
-
-                list_rental_price: `<li><span class="model">月 ~ 木</span><span class="brand">680,000 KRW</span></li><li><span class="model">金, 土, 日</span><span class="brand">880,000 KRW</span></li>`,
-                list_rental_policy: `<li><span class="model">エンジニア1名込み</span></li><li><span class="model">収益は100%主催者に帰属</span></li>`,
-                list_rental_booking: `<li><span class="model">録音 5万ウォن (HDD持参)</span></li><li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>`
+                list_rental_price: `<li><span class="model">月 ~ 木曜日</span><span class="brand">680,000 KRW</span></li><li><span class="model">金, 土, 日</span><span class="brand">880,000 KRW</span></li>`,
+                list_rental_policy: `<li><span class="model">エンジニア1名込み</span></li><li><span class="model">公演収益は100%主催者に帰属</span></li>`,
+                list_rental_booking: `<li><span class="model">録音 5万ウォン (HDD持参)</span></li><li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>`
             }
         };
 
