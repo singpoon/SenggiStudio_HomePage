@@ -1,21 +1,22 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YG02JMHPH4"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-YG02JMHPH4');
+        gtag('config', 'G-YG02JMHPH4');
     </script>
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "wkdkb8cvzq");
     </script>
     <meta charset="UTF-8">
@@ -31,7 +32,8 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Google Fonts: Noto Sans KR -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -82,9 +84,9 @@
             border-radius: 10px;
         }
 
-            ::-webkit-scrollbar-thumb:hover {
-                background: var(--senggi-red);
-            }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--senggi-red);
+        }
 
         .container {
             max-width: 100%;
@@ -107,10 +109,10 @@
             z-index: 1000;
         }
 
-            header .container {
-                max-width: 1600px;
-                margin: 0 auto;
-            }
+        header .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
 
         nav {
             height: 70px;
@@ -132,16 +134,16 @@
             text-decoration: none;
         }
 
-            .logo img {
-                height: 60px;
-                width: auto;
-                object-fit: contain;
-                transition: var(--transition);
-            }
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            transition: var(--transition);
+        }
 
-            .logo:hover img {
-                transform: scale(1.05);
-            }
+        .logo:hover img {
+            transform: scale(1.05);
+        }
 
         .nav-right {
             display: flex;
@@ -153,35 +155,35 @@
             align-items: center;
         }
 
-            .menu-wrapper ul {
-                display: flex;
-                list-style: none;
-                align-items: center;
-                margin: 0;
-                padding: 0;
-            }
+        .menu-wrapper ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
 
-                .menu-wrapper ul li {
-                    margin-left: 30px;
-                }
+        .menu-wrapper ul li {
+            margin-left: 30px;
+        }
 
-                    .menu-wrapper ul li a {
-                        text-decoration: none;
-                        color: var(--gray);
-                        font-weight: 400;
-                        font-size: 1.15rem;
-                        transition: var(--transition);
-                        letter-spacing: 1.5px;
-                    }
+        .menu-wrapper ul li a {
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 400;
+            font-size: 1.15rem;
+            transition: var(--transition);
+            letter-spacing: 1.5px;
+        }
 
-                        .menu-wrapper ul li a:hover {
-                            color: var(--white);
-                        }
+        .menu-wrapper ul li a:hover {
+            color: var(--white);
+        }
 
-                        .menu-wrapper ul li a.active {
-                            color: var(--senggi-red);
-                            font-weight: 700;
-                        }
+        .menu-wrapper ul li a.active {
+            color: var(--senggi-red);
+            font-weight: 700;
+        }
 
         .desktop-only {
             display: flex;
@@ -206,10 +208,10 @@
             font-size: 1.15rem;
         }
 
-            .lang-btn.active {
-                color: var(--white);
-                font-weight: 700;
-            }
+        .lang-btn.active {
+            color: var(--white);
+            font-weight: 700;
+        }
 
         .header-controls {
             display: flex;
@@ -225,10 +227,10 @@
             z-index: 1001;
         }
 
-            .hamburger svg {
-                width: 28px;
-                height: 28px;
-            }
+        .hamburger svg {
+            width: 28px;
+            height: 28px;
+        }
 
         /* [3. 섹션 공통 레이아웃] */
         section {
@@ -267,15 +269,15 @@
             scrollbar-width: none;
         }
 
-            .section-content::-webkit-scrollbar {
-                display: none;
-            }
+        .section-content::-webkit-scrollbar {
+            display: none;
+        }
 
-            .section-content::before,
-            .section-content::after {
-                content: '';
-                flex: auto;
-            }
+        .section-content::before,
+        .section-content::after {
+            content: '';
+            flex: auto;
+        }
 
         .subtitle {
             font-size: 1.32rem;
@@ -297,13 +299,13 @@
             min-height: 100dvh;
         }
 
-            #about .container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-            }
+        #about .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
 
         .about-logo {
             width: 350px;
@@ -311,7 +313,7 @@
             height: auto;
             margin-bottom: 35px;
             object-fit: contain;
-            filter: drop-shadow(0 0 30px rgba(0,0,0,0.8));
+            filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.8));
             animation: fadeInScale 1.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -324,13 +326,13 @@
             line-height: 2.2;
             word-break: keep-all;
             color: #eee;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-            .about-text b {
-                color: var(--senggi-red);
-                font-weight: 700;
-            }
+        .about-text b {
+            color: var(--senggi-red);
+            font-weight: 700;
+        }
 
         .about-social-links {
             display: flex;
@@ -339,27 +341,27 @@
             justify-content: center;
         }
 
-            .about-social-links a {
-                color: var(--white);
-                background: rgba(255,255,255,0.1);
-                padding: 15px;
-                border-radius: 50%;
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                backdrop-filter: blur(5px);
-            }
+        .about-social-links a {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 50%;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
 
-                .about-social-links a:hover {
-                    background: var(--senggi-red);
-                    transform: translateY(-5px);
-                }
+        .about-social-links a:hover {
+            background: var(--senggi-red);
+            transform: translateY(-5px);
+        }
 
-            .about-social-links svg {
-                width: 26px;
-                height: 26px;
-            }
+        .about-social-links svg {
+            width: 26px;
+            height: 26px;
+        }
 
         @keyframes fadeInScale {
             from {
@@ -407,22 +409,22 @@
             justify-content: center;
         }
 
-            .gallery-item-swiper.swiper-slide-active {
-                opacity: 1;
-                transform: scale(1);
-                z-index: 2;
-            }
+        .gallery-item-swiper.swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 2;
+        }
 
-            .gallery-item-swiper img {
-                width: auto;
-                height: 100%;
-                max-width: 85vw;
-                max-height: 100%;
-                object-fit: contain;
-                border-radius: 12px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-                display: block;
-            }
+        .gallery-item-swiper img {
+            width: auto;
+            height: 100%;
+            max-width: 85vw;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            display: block;
+        }
 
         /* [Space] */
         .space-grid {
@@ -448,11 +450,11 @@
             width: 100%;
         }
 
-            .floorplan-img-wrapper img {
-                max-height: 100%;
-                max-width: 100%;
-                object-fit: contain;
-            }
+        .floorplan-img-wrapper img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
 
         .capacity-info {
             margin-top: 15px;
@@ -462,7 +464,8 @@
         }
 
         /* [Equipment & Rental Grids] */
-        .equip-grid, .rental-grid {
+        .equip-grid,
+        .rental-grid {
             display: grid;
             width: 100%;
             grid-template-columns: repeat(3, 1fr);
@@ -470,7 +473,8 @@
             flex-shrink: 0;
         }
 
-        .equip-item-list, .rental-item-list {
+        .equip-item-list,
+        .rental-item-list {
             list-style: none;
             font-size: 0.85rem;
             color: #bbb;
@@ -478,54 +482,54 @@
             word-break: keep-all;
         }
 
-            .equip-item-list li {
-                border-bottom: 1px solid rgba(255,255,255,0.03);
-                padding-bottom: 6px;
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 6px;
-                align-items: flex-start;
-            }
+        .equip-item-list li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding-bottom: 6px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 6px;
+            align-items: flex-start;
+        }
 
-                .equip-item-list li span.model {
-                    color: var(--white);
-                    font-weight: 500;
-                    font-size: 0.95rem;
-                }
+        .equip-item-list li span.model {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
 
-                .equip-item-list li span.brand {
-                    color: var(--gray);
-                    font-size: 0.7rem;
-                    text-transform: uppercase;
-                    margin-top: 3px;
-                }
+        .equip-item-list li span.brand {
+            color: var(--gray);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
 
-            .rental-item-list li {
-                border-bottom: 1px solid rgba(255,255,255,0.05);
-                padding: 10px 0;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                min-height: 60px;
-            }
+        .rental-item-list li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 60px;
+        }
 
-                .rental-item-list li span.model {
-                    color: var(--white);
-                    font-weight: 500;
-                    font-size: 0.95rem;
-                    flex: 1;
-                    padding-right: 15px;
-                    line-height: 1.4;
-                    text-align: left;
-                }
+        .rental-item-list li span.model {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            flex: 1;
+            padding-right: 15px;
+            line-height: 1.4;
+            text-align: left;
+        }
 
-                .rental-item-list li span.brand {
-                    color: var(--senggi-red);
-                    font-size: 1.05rem;
-                    font-weight: 700;
-                    white-space: nowrap;
-                }
+        .rental-item-list li span.brand {
+            color: var(--senggi-red);
+            font-size: 1.05rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
 
         .contact-link {
             text-decoration: none;
@@ -533,9 +537,9 @@
             transition: var(--transition);
         }
 
-            .contact-link:hover {
-                opacity: 0.7;
-            }
+        .contact-link:hover {
+            opacity: 0.7;
+        }
 
         /* [Schedule] */
         .calendar-wrapper {
@@ -569,13 +573,13 @@
             border-radius: 50%;
         }
 
-            .legend-circle.red {
-                background-color: var(--senggi-red);
-            }
+        .legend-circle.red {
+            background-color: var(--senggi-red);
+        }
 
-            .legend-circle.blue {
-                background-color: var(--senggi-blue);
-            }
+        .legend-circle.blue {
+            background-color: var(--senggi-blue);
+        }
 
         .calendar-container {
             width: 100%;
@@ -585,12 +589,12 @@
             overflow: hidden;
         }
 
-            .calendar-container iframe {
-                width: 100%;
-                height: 100%;
-                border: 0;
-                filter: invert(95%) hue-rotate(170deg) contrast(1.3) brightness(1.1);
-            }
+        .calendar-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: invert(95%) hue-rotate(170deg) contrast(1.3) brightness(1.1);
+        }
 
         footer {
             position: absolute;
@@ -658,7 +662,9 @@
                 height: 48vh;
             }
 
-            .space-grid, .equip-grid, .rental-grid {
+            .space-grid,
+            .equip-grid,
+            .rental-grid {
                 grid-template-columns: 1fr;
                 gap: 25px;
             }
@@ -679,10 +685,10 @@
                 align-items: center;
             }
 
-                .equip-item-list li span.model {
-                    font-size: 0.85rem;
-                    text-align: center;
-                }
+            .equip-item-list li span.model {
+                font-size: 0.85rem;
+                text-align: center;
+            }
 
             .rental-item-list li {
                 flex-direction: column;
@@ -691,16 +697,16 @@
                 padding: 6px 0;
             }
 
-                .rental-item-list li span.model {
-                    text-align: center;
-                    padding-right: 0;
-                    margin-bottom: 2px;
-                    font-size: 0.85rem;
-                }
+            .rental-item-list li span.model {
+                text-align: center;
+                padding-right: 0;
+                margin-bottom: 2px;
+                font-size: 0.85rem;
+            }
 
-                .rental-item-list li span.brand {
-                    font-size: 0.95rem;
-                }
+            .rental-item-list li span.brand {
+                font-size: 0.95rem;
+            }
 
             .nav-left {
                 gap: 15px;
@@ -740,24 +746,25 @@
                 z-index: 1000;
             }
 
-                .menu-wrapper.active {
-                    left: 0;
-                }
+            .menu-wrapper.active {
+                left: 0;
+            }
 
-                .menu-wrapper ul {
-                    flex-direction: column;
-                }
+            .menu-wrapper ul {
+                flex-direction: column;
+            }
 
-                    .menu-wrapper ul li {
-                        margin: 15px 0 !important;
-                    }
+            .menu-wrapper ul li {
+                margin: 15px 0 !important;
+            }
 
-                        .menu-wrapper ul li a {
-                            font-size: 1.5rem;
-                        }
+            .menu-wrapper ul li a {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -776,17 +783,26 @@
                 <div class="nav-right">
                     <div id="mobile-menu-wrapper" class="menu-wrapper">
                         <ul id="nav-menu">
-                            <li><a href="#about" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_about">ABOUT</a></li>
-                            <li><a href="#gallery" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_gallery">GALLERY</a></li>
-                            <li><a href="#space" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_space">SPACE</a></li>
-                            <li><a href="#equipment" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_equip">EQUIPMENT</a></li>
-                            <li><a href="#rental" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_rental">RENTAL</a></li>
-                            <li><a href="#schedule" class="nav-link" onclick="closeMobileMenu()" data-i18n="m_schedule">SCHEDULE</a></li>
+                            <li><a href="#about" class="nav-link" onclick="closeMobileMenu()"
+                                    data-i18n="m_about">ABOUT</a></li>
+                            <li><a href="#gallery" class="nav-link" onclick="closeMobileMenu()"
+                                    data-i18n="m_gallery">GALLERY</a></li>
+                            <li><a href="#space" class="nav-link" onclick="closeMobileMenu()"
+                                    data-i18n="m_space">SPACE</a></li>
+                            <li><a href="#equipment" class="nav-link" onclick="closeMobileMenu()"
+                                    data-i18n="m_equip">EQUIPMENT</a></li>
+                            <li><a href="#rental" class="nav-link" onclick="closeMobileMenu()"
+                                    data-i18n="m_rental">RENTAL</a></li>
+                            <li><a href="#schedule" class="nav-link" onclick="closeMobileMenu()"
+                                    data-i18n="m_schedule">SCHEDULE</a></li>
                         </ul>
                     </div>
                     <div class="header-controls">
                         <div class="hamburger" onclick="toggleMobileMenu()" title="Menu">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round">
+                                <path d="M3 12h18M3 6h18M3 18h18" />
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -806,13 +822,24 @@
                 </div>
                 <div class="about-social-links">
                     <a href="https://www.instagram.com/senggistudio" target="_blank" title="Instagram">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
                     </a>
                     <a href="https://www.youtube.com/@senggistudio" target="_blank" title="YouTube">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
                     </a>
                     <a href="mailto:senggistudio@gmail.com" title="Email">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -932,7 +959,9 @@
                             </div>
                         </div>
                         <div class="calendar-container">
-                            <iframe id="google-calendar-iframe" src="https://calendar.google.com/calendar/embed?src=27b6e36424d080e5f5b71bc21dd89d097bc37d0bfc6297a5af83084d4c1f47e7%40group.calendar.google.com&ctz=Asia%2FSeoul&color=%23f9361c" scrolling="no"></iframe>
+                            <iframe id="google-calendar-iframe"
+                                src="https://calendar.google.com/calendar/embed?src=27b6e36424d080e5f5b71bc21dd89d097bc37d0bfc6297a5af83084d4c1f47e7%40group.calendar.google.com&ctz=Asia%2FSeoul&color=%23f9361c"
+                                scrolling="no"></iframe>
                         </div>
                     </div>
                 </div>
@@ -1140,4 +1169,5 @@
         window.onload = () => setLanguage('KR');
     </script>
 </body>
+
 </html>
