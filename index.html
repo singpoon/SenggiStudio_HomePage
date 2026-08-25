@@ -922,6 +922,7 @@
                             <ul class="equip-item-list" id="list-console"></ul>
                             <ul class="equip-item-list" id="list-power-amps"></ul>
                             <ul class="equip-item-list" id="list-speakers"></ul>
+                            <ul class="equip-item-list" id="list-iem"></ul>
                             <ul class="equip-item-list" id="list-os"></ul>
                         </div>
                         <div class="equip-col">
@@ -1001,8 +1002,9 @@
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">Wing-BK / DL16, SD16 I/O Box</span><span class="brand">Behringer</span></li>`,
-                list_power_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Power Amps</span><span class="model">EX 1250</span><span class="brand">QSC</span></li><li><span class="model">XLS 402</span><span class="brand">Crown</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive / FBT (4)</span><span class="brand">Vintage</span></li>`,
+                list_power_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Power Amps</span><span class="model">500-C</span><span class="brand">Fisher</span></li><li><span class="model">EX 1250</span><span class="brand">QSC</span></li><li><span class="model">XLS 402</span><span class="brand">Crown</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">EV 50's Speaker / FBT (4)</span><span class="brand">Vintage Speakers</span></li>`,
+                list_iem: `<li><span class="brand text-gray-400 mb-1 mt-3">In-Ear System</span><span class="model">SR 2050 IEM (2ch, 4 Pack)</span><span class="brand">Sennheiser</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
                 list_outboard: `<li><span class="brand text-gray-400 mb-1">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">Moogerfooger MF-101</span><span class="brand">Moog</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 (3) Wireless Tube</span><span class="brand">Astera</span></li><li><span class="model">AX3 (3) Wireless Spotlight</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
@@ -1048,8 +1050,9 @@
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">Wing-BK / DL16, SD16 I/O Box</span><span class="brand">Behringer</span></li>`,
-                list_power_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Power Amps</span><span class="model">EX 1250</span><span class="brand">QSC</span></li><li><span class="model">XLS 402</span><span class="brand">Crown</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive / FBT (4)</span><span class="brand">Vintage</span></li>`,
+                list_power_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Power Amps</span><span class="model">500-C</span><span class="brand">Fisher</span></li><li><span class="model">EX 1250</span><span class="brand">QSC</span></li><li><span class="model">XLS 402</span><span class="brand">Crown</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">EV 50's Speaker / FBT (4)</span><span class="brand">Vintage Speakers</span></li>`,
+                list_iem: `<li><span class="brand text-gray-400 mb-1 mt-3">In-Ear System</span><span class="model">SR 2050 IEM (2ch, 4 Pack)</span><span class="brand">Sennheiser</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
                 list_outboard: `<li><span class="brand text-gray-400 mb-1">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">Moogerfooger MF-101</span><span class="brand">Moog</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 Wireless Tube (3)</span><span class="brand">Astera</span></li><li><span class="model">AX3 Wireless Spotlight (3)</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
@@ -1081,7 +1084,7 @@
                     `
             },
             JP: {
-                m_about: "紹介", m_gallery: "갤러리", m_space: "空間", m_equip: "機材", m_rental: "レンタル", m_schedule: "スケジュール",
+                m_about: "紹介", m_gallery: "ギャラリー", m_space: "空間", m_equip: "機材", m_rental: "レンタル", m_schedule: "スケジュール",
                 a_content: "<b>Senggi Studio</b>は、境界のない創作活動を志向し、<br>音楽を軸に多様なプロジェクトと経験が<br>交差し、繋がっていく空間です。",
                 e_cat_amps_mics: "アンプ<br>& マイク", e_cat_instr_dj: "楽器<br>& DJ機材", e_cat_sys: "音響<br>システム", e_cat_outboard_light: "アウトボード<br>& 照明",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
@@ -1095,8 +1098,9 @@
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">Wing-BK / DL16, SD16 I/O Box</span><span class="brand">Behringer</span></li>`,
-                list_power_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Power Amps</span><span class="model">EX 1250</span><span class="brand">QSC</span></li><li><span class="model">XLS 402</span><span class="brand">Crown</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive / FBT (4)</span><span class="brand">Vintage</span></li>`,
+                list_power_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Power Amps</span><span class="model">500-C</span><span class="brand">Fisher</span></li><li><span class="model">EX 1250</span><span class="brand">QSC</span></li><li><span class="model">XLS 402</span><span class="brand">Crown</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">EV 50's Speaker / FBT (4)</span><span class="brand">Vintage Speakers</span></li>`,
+                list_iem: `<li><span class="brand text-gray-400 mb-1 mt-3">In-Ear System</span><span class="model">SR 2050 IEM (2ch, 4 Pack)</span><span class="brand">Sennheiser</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
                 list_outboard: `<li><span class="brand text-gray-400 mb-1">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">Moogerfooger MF-101</span><span class="brand">Moog</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 (3) ワイヤレスチューブ</span><span class="brand">Astera</span></li><li><span class="model">AX3 (3) ワイヤレススポット</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
@@ -1135,7 +1139,7 @@
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang][key]) el.innerHTML = translations[lang][key];
             });
-            const listIds = ['g_amps', 'b_amps', 'mics', 'drums', 'keys', 'dj', 'console', 'power_amps', 'speakers', 'outboard', 'light', 'os', 'rental_price', 'rental_policy', 'rental_booking'];
+            const listIds = ['g_amps', 'b_amps', 'mics', 'drums', 'keys', 'dj', 'console', 'power_amps', 'speakers', 'iem', 'outboard', 'light', 'os', 'rental_price', 'rental_policy', 'rental_booking'];
             listIds.forEach(id => {
                 const el = document.getElementById(`list-${id.replace(/_/g, '-')}`);
                 if (el && translations[lang][`list_${id}`]) el.innerHTML = translations[lang][`list_${id}`];
