@@ -920,12 +920,13 @@
                         <div class="equip-col">
                             <div class="subtitle" data-i18n="e_cat_sys">SOUND<br>SYSTEM</div>
                             <ul class="equip-item-list" id="list-console"></ul>
-                            <ul class="equip-item-list" id="list-outboard"></ul>
+                            <ul class="equip-item-list" id="list-power-amps"></ul>
                             <ul class="equip-item-list" id="list-speakers"></ul>
                             <ul class="equip-item-list" id="list-os"></ul>
                         </div>
                         <div class="equip-col">
-                            <div class="subtitle" data-i18n="e_cat_light">LIGHTING<br>SYSTEM</div>
+                            <div class="subtitle" data-i18n="e_cat_outboard_light">OUTBOARD<br>& LIGHTING</div>
+                            <ul class="equip-item-list" id="list-outboard"></ul>
                             <ul class="equip-item-list" id="list-light"></ul>
                         </div>
                     </div>
@@ -988,22 +989,23 @@
             KR: {
                 m_about: "소개", m_gallery: "갤러리", m_space: "공간", m_equip: "장비", m_rental: "대관", m_schedule: "일정",
                 a_content: "<b>Senggi Studio</b>는 경계 없는 창작 활동을 지향하며,<br>음악을 중심으로 다양한 프로젝트와 경험이<br>교차하고 이어지는 공간입니다.",
-                e_cat_amps_mics: "AMPLIFIERS<br>& MICROPHONES", e_cat_instr_dj: "INSTRUMENTS<br>& DJ", e_cat_sys: "SOUND<br>SYSTEM", e_cat_light: "LIGHTING<br>SYSTEM",
+                e_cat_amps_mics: "AMPLIFIERS<br>& MICROPHONES", e_cat_instr_dj: "INSTRUMENTS<br>& DJ", e_cat_sys: "SOUND<br>SYSTEM", e_cat_outboard_light: "OUTBOARD<br>& LIGHTING",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
                 s_cap_5f: "수용인원 스탠딩 100, 좌석 65 (문의)", s_cap_roof: "수용인원 약 80명",
                 sched_booked: "대관 완료", sched_pending: "협의중",
 
                 list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb (1967)</span><span class="brand">Fender</span></li><li><span class="model">Custom 262 (1962)</span><span class="brand">Magnaton</span></li>`,
                 list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360 (1972)</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135 (1973)</span><span class="brand">Fender</span></li>`,
-                list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 (3) / SM57 (5) / KSM8</span><span class="brand">Shure</span></li><li><span class="model">E945 (1) / E904 (3)</span><span class="brand">Sennheiser</span></li><li><span class="model">AKG C451B (2) / EV RE-20</span><span class="brand">Misc</span></li><li><span class="model">sE V7X / Sontronics STC-80</span><span class="brand">Misc</span></li>`,
+                list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 (3) / SM57 (5) / KSM8</span><span class="brand">Shure</span></li><li><span class="model">E945 (1) / E904 (3)</span><span class="brand">Sennheiser</span></li><li><span class="model">AKG C451B (2) / EV RE-20</span><span class="brand">Misc</span></li><li><span class="model">sE V7 / Sontronics STC-80</span><span class="brand">Misc</span></li>`,
                 list_drums: `<li><span class="brand text-gray-400 mb-1">Drums & Percussion</span><span class="model">USA Custom Kit (Tom Set)</span><span class="brand">Gretsch</span></li><li><span class="model">K Dark Custom Series</span><span class="brand">Zildjian</span></li><li><span class="model">Giovanni Conga / Bongo</span><span class="brand">LP</span></li>`,
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">Wing-BK / DL16, SD16 I/O Box</span><span class="brand">Behringer</span></li>`,
-                list_outboard: `<li><span class="brand text-gray-400 mb-1 mt-3">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">MF-101</span><span class="brand">Moogerfooger</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive</span><span class="brand">Vintage</span></li>`,
-                list_light: `<li><span class="brand text-gray-400 mb-1">Lighting Fixtures</span><span class="model">AX1 (3) Wireless Tube</span><span class="brand">Astera</span></li><li><span class="model">AX3 (3) Wireless Spotlight</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
+                list_power_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Power Amps</span><span class="model">EX 1250</span><span class="brand">QSC</span></li><li><span class="model">XLS 402</span><span class="brand">Crown</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive / FBT (4)</span><span class="brand">Vintage</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
+                list_outboard: `<li><span class="brand text-gray-400 mb-1">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">Moogerfooger MF-101</span><span class="brand">Moog</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
+                list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 (3) Wireless Tube</span><span class="brand">Astera</span></li><li><span class="model">AX3 (3) Wireless Spotlight</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
 
                 list_rental_price: `
                         <li><span class="model">월 ~ 목요일</span><span class="brand">630,000 KRW</span></li>
@@ -1027,29 +1029,30 @@
                         <li><span class="model">프로젝터 & 아날로그 TV 사용 : 50,000원</span></li>
                         <li><span class="model">멀티트랙 레코딩 : 팀당 50,000원 (45분 기준, Mac용 저장장치 지참)</span></li>
                         <li><span class="model font-bold text-white">농협 475817-56-000664 정주영</span></li>
-                        <li><span class="model font-bold text-white">T: 010-5354-0193</span></li>
+                        <li><span class="model font-bold text-white">T: 010-5354-0193</span><span class="brand text-gray-300" style="font-size:0.85rem; font-weight:400; text-transform:none;"><a href="mailto:senggistudio@gmail.com" class="contact-link">senggistudio@gmail.com</a></span></li>
                         <li style="border-bottom:none; margin-top:15px;"><span class="model"><a href="https://docs.google.com/forms/d/e/1FAIpQLScqIyXq43Pi7cAUtnZXurxGHT7BakNu9-noh4QeExz4V843gw/viewform?usp=sharing&ouid=115788391464491178818" target="_blank" class="contact-link" style="color:var(--senggi-red); font-weight:900; border-bottom:2px solid var(--senggi-red);">대관 신청하기</a></span></li>
                     `
             },
             EN: {
                 m_about: "About", m_gallery: "Gallery", m_space: "Space", m_equip: "Equipment", m_rental: "Rental", m_schedule: "Schedule",
                 a_content: "<b>Senggi Studio</b> pursues boundless creative activities,<br>serving as a space where various projects and experiences<br>intersect and connect, centered around music.",
-                e_cat_amps_mics: "AMPLIFIERS<br>& MICROPHONES", e_cat_instr_dj: "INSTRUMENTS<br>& DJ", e_cat_sys: "SOUND<br>SYSTEM", e_cat_light: "LIGHTING<br>SYSTEM",
+                e_cat_amps_mics: "AMPLIFIERS<br>& MICROPHONES", e_cat_instr_dj: "INSTRUMENTS<br>& DJ", e_cat_sys: "SOUND<br>SYSTEM", e_cat_outboard_light: "OUTBOARD<br>& LIGHTING",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
                 s_cap_5f: "Capacity: Standing 100, Seated 65 (Inquiry)", s_cap_roof: "Capacity: approx. 80 people",
                 sched_booked: "Confirmed", sched_pending: "Pending",
 
                 list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb (1967)</span><span class="brand">Fender</span></li><li><span class="model">Custom 262 (1962)</span><span class="brand">Magnaton</span></li>`,
                 list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360 (1972)</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135 (1973)</span><span class="brand">Fender</span></li>`,
-                list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 (3) / SM57 (5) / KSM8</span><span class="brand">Shure</span></li><li><span class="model">E945 (1) / E904 (3)</span><span class="brand">Sennheiser</span></li><li><span class="model">AKG C451B (2) / EV RE-20</span><span class="brand">Misc</span></li><li><span class="model">sE V7X / Sontronics STC-80</span><span class="brand">Misc</span></li>`,
+                list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 (3) / SM57 (5) / KSM8</span><span class="brand">Shure</span></li><li><span class="model">E945 (1) / E904 (3)</span><span class="brand">Sennheiser</span></li><li><span class="model">AKG C451B (2) / EV RE-20</span><span class="brand">Misc</span></li><li><span class="model">sE V7 / Sontronics STC-80</span><span class="brand">Misc</span></li>`,
                 list_drums: `<li><span class="brand text-gray-400 mb-1">Drums & Percussion</span><span class="model">Gretsch USA Custom Kit</span><span class="brand">Gretsch</span></li><li><span class="model">Zildjian K Dark Series</span><span class="brand">Zildjian</span></li>`,
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">Wing-BK / DL16, SD16 I/O Box</span><span class="brand">Behringer</span></li>`,
-                list_outboard: `<li><span class="brand text-gray-400 mb-1 mt-3">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">MF-101</span><span class="brand">Moogerfooger</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li>`,
-                list_light: `<li><span class="brand text-gray-400 mb-1">Lighting Fixtures</span><span class="model">AX1 Wireless Tube (3)</span><span class="brand">Astera</span></li><li><span class="model">AX3 Wireless Spotlight (3)</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
+                list_power_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Power Amps</span><span class="model">EX 1250</span><span class="brand">QSC</span></li><li><span class="model">XLS 402</span><span class="brand">Crown</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive / FBT (4)</span><span class="brand">Vintage</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
+                list_outboard: `<li><span class="brand text-gray-400 mb-1">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">Moogerfooger MF-101</span><span class="brand">Moog</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
+                list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 Wireless Tube (3)</span><span class="brand">Astera</span></li><li><span class="model">AX3 Wireless Spotlight (3)</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
 
                 list_rental_price: `
                         <li><span class="model">Mon ~ Thu</span><span class="brand">630,000 KRW</span></li>
@@ -1073,29 +1076,30 @@
                         <li><span class="model">Projector & TV usage : 50,000 KRW</span></li>
                         <li><span class="model">Multitrack Recording : 50,000 KRW/team (45 min, Bring Mac HDD)</span></li>
                         <li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>
-                        <li><span class="model font-bold text-white">T: +82-10-5354-0193</span></li>
+                        <li><span class="model font-bold text-white">T: +82-10-5354-0193</span><span class="brand text-gray-300" style="font-size:0.85rem; font-weight:400; text-transform:none;"><a href="mailto:senggistudio@gmail.com" class="contact-link">senggistudio@gmail.com</a></span></li>
                         <li style="border-bottom:none; margin-top:15px;"><span class="model"><a href="https://docs.google.com/forms/d/e/1FAIpQLScqIyXq43Pi7cAUtnZXurxGHT7BakNu9-noh4QeExz4V843gw/viewform?usp=sharing&ouid=115788391464491178818" target="_blank" class="contact-link" style="color:var(--senggi-red); font-weight:900; border-bottom:2px solid var(--senggi-red);">Online Application</a></span></li>
                     `
             },
             JP: {
-                m_about: "紹介", m_gallery: "ギャラリー", m_space: "空間", m_equip: "機材", m_rental: "レンタル", m_schedule: "スケジュール",
+                m_about: "紹介", m_gallery: "갤러리", m_space: "空間", m_equip: "機材", m_rental: "レンタル", m_schedule: "スケジュール",
                 a_content: "<b>Senggi Studio</b>は、境界のない創作活動を志向し、<br>音楽を軸に多様なプロジェクトと経験が<br>交差し、繋がっていく空間です。",
-                e_cat_amps_mics: "アンプ<br>& マイク", e_cat_instr_dj: "楽器<br>& DJ機材", e_cat_sys: "音響<br>システム", e_cat_light: "照明<br>システム",
+                e_cat_amps_mics: "アンプ<br>& マイク", e_cat_instr_dj: "楽器<br>& DJ機材", e_cat_sys: "音響<br>システム", e_cat_outboard_light: "アウトボード<br>& 照明",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
                 s_cap_5f: "収容人数：スタンディング100, 座席65", s_cap_roof: "収容人数：約80名",
                 sched_booked: "予約完了", sched_pending: "協議中",
 
                 list_g_amps: `<li><span class="brand text-gray-400 mb-1">Guitar Amps</span><span class="model">Twin Reverb (1967)</span><span class="brand">Fender</span></li><li><span class="model">Custom 262 (1962)</span><span class="brand">Magnaton</span></li>`,
                 list_b_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Bass Amps</span><span class="model">360 (1972)</span><span class="brand">Acoustic</span></li><li><span class="model">Bassman 135 (1973)</span><span class="brand">Fender</span></li>`,
-                list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 (3) / SM57 (5) / KSM8</span><span class="brand">Shure</span></li><li><span class="model">E945 (1) / E904 (3)</span><span class="brand">Sennheiser</span></li><li><span class="model">AKG C451B (2) / EV RE-20</span><span class="brand">Misc</span></li><li><span class="model">sE V7X / Sontronics STC-80</span><span class="brand">Misc</span></li>`,
+                list_mics: `<li><span class="brand text-gray-400 mb-1 mt-3">Microphones</span><span class="model">SM58 (3) / SM57 (5) / KSM8</span><span class="brand">Shure</span></li><li><span class="model">E945 (1) / E904 (3)</span><span class="brand">Sennheiser</span></li><li><span class="model">AKG C451B (2) / EV RE-20</span><span class="brand">Misc</span></li><li><span class="model">sE V7 / Sontronics STC-80</span><span class="brand">Misc</span></li>`,
                 list_drums: `<li><span class="brand text-gray-400 mb-1">Drums & Percussion</span><span class="model">USA Custom Kit</span><span class="brand">Gretsch</span></li><li><span class="model">K Dark Series</span><span class="brand">Zildjian</span></li>`,
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">Wing-BK / DL16, SD16 I/O Box</span><span class="brand">Behringer</span></li>`,
-                list_outboard: `<li><span class="brand text-gray-400 mb-1 mt-3">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">MF-101</span><span class="brand">Moogerfooger</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
-                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li>`,
-                list_light: `<li><span class="brand text-gray-400 mb-1">Lighting Fixtures</span><span class="model">AX1 (3) ワイヤレスチューブ</span><span class="brand">Astera</span></li><li><span class="model">AX3 (3) ワイヤレススポット</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
+                list_power_amps: `<li><span class="brand text-gray-400 mb-1 mt-3">Power Amps</span><span class="model">EX 1250</span><span class="brand">QSC</span></li><li><span class="model">XLS 402</span><span class="brand">Crown</span></li>`,
+                list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive / FBT (4)</span><span class="brand">Vintage</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
+                list_outboard: `<li><span class="brand text-gray-400 mb-1">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">Moogerfooger MF-101</span><span class="brand">Moog</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
+                list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 (3) ワイヤレスチューブ</span><span class="brand">Astera</span></li><li><span class="model">AX3 (3) ワイヤレススポット</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
 
                 list_rental_price: `
                         <li><span class="model">月 ~ 木曜日</span><span class="brand">630,000 KRW</span></li>
@@ -1116,10 +1120,10 @@
                 list_rental_booking: `
                         <li><span class="model">予約金 : 400,000 KRW</span></li>
                         <li><span class="model">撮影レンタル : 1時間 100,000 KRW (基本3時間)</span></li>
-                        <li><span class="model">プロジェクター & TV使用 : 50,000 KRW</span></li>
+                        <li><span class="model">프로젝터 & TV使用 : 50,000 KRW</span></li>
                         <li><span class="model">マルチトラック録音 : 1チーム 50,000 KRW (45分基準, HDD持参)</span></li>
                         <li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>
-                        <li><span class="model font-bold text-white">T: 010-5354-0193</span></li>
+                        <li><span class="model font-bold text-white">T: 010-5354-0193</span><span class="brand text-gray-300" style="font-size:0.85rem; font-weight:400; text-transform:none;"><a href="mailto:senggistudio@gmail.com" class="contact-link">senggistudio@gmail.com</a></span></li>
                         <li style="border-bottom:none; margin-top:15px;"><span class="model"><a href="https://docs.google.com/forms/d/e/1FAIpQLScqIyXq43Pi7cAUtnZXurxGHT7BakNu9-noh4QeExz4V843gw/viewform?usp=sharing&ouid=115788391464491178818" target="_blank" class="contact-link" style="color:var(--senggi-red); font-weight:900; border-bottom:2px solid var(--senggi-red);">お申し込みはこちら</a></span></li>
                     `
             }
@@ -1131,7 +1135,7 @@
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang][key]) el.innerHTML = translations[lang][key];
             });
-            const listIds = ['g_amps', 'b_amps', 'mics', 'drums', 'keys', 'dj', 'console', 'outboard', 'speakers', 'light', 'os', 'rental_price', 'rental_policy', 'rental_booking'];
+            const listIds = ['g_amps', 'b_amps', 'mics', 'drums', 'keys', 'dj', 'console', 'power_amps', 'speakers', 'outboard', 'light', 'os', 'rental_price', 'rental_policy', 'rental_booking'];
             listIds.forEach(id => {
                 const el = document.getElementById(`list-${id.replace(/_/g, '-')}`);
                 if (el && translations[lang][`list_${id}`]) el.innerHTML = translations[lang][`list_${id}`];
