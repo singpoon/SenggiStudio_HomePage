@@ -913,6 +913,7 @@
                         <div class="equip-col">
                             <div class="subtitle" data-i18n="e_cat_sys">SOUND<br>& LIGHT</div>
                             <ul class="equip-item-list" id="list-console"></ul>
+                            <ul class="equip-item-list" id="list-outboard"></ul>
                             <ul class="equip-item-list" id="list-speakers"></ul>
                             <ul class="equip-item-list" id="list-light"></ul>
                             <ul class="equip-item-list" id="list-os"></ul>
@@ -989,31 +990,35 @@
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">Wing-BK / DL16, SD16 I/O Box</span><span class="brand">Behringer</span></li>`,
+                list_outboard: `<li><span class="brand text-gray-400 mb-1 mt-3">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">MF-101</span><span class="brand">Moogerfooger</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
                 list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li><li><span class="model">Fisher 500-C / EV Passive</span><span class="brand">Vintage</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 (3) / AX3 (3) Wireless</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
 
                 list_rental_price: `
-                            <li><span class="model">월 ~ 목요일</span><span class="brand">580,000 KRW</span></li>
-                            <li><span class="model">금, 일, 공휴일</span><span class="brand">780,000 KRW</span></li>
-                            <li><span class="model">토요일</span><span class="brand">880,000 KRW</span></li>
-                            <li><span class="model">Rooftop 대관</span><span class="brand">+ 500,000 KRW</span></li>
-                            <li><span class="model text-gray-400" style="font-size:0.75rem;">* 부가세 10% 별도</span></li>
-                        `,
+                        <li><span class="model">월 ~ 목요일</span><span class="brand">630,000 KRW</span></li>
+                        <li><span class="model">평일 공휴일</span><span class="brand">780,000 KRW</span></li>
+                        <li><span class="model">금, 일, 공휴일</span><span class="brand">780,000 KRW</span></li>
+                        <li><span class="model">토요일</span><span class="brand">880,000 KRW</span></li>
+                        <li><span class="model">Rooftop 대관</span><span class="brand">+ 500,000 KRW</span></li>
+                        <li><span class="model text-gray-400" style="font-size:0.75rem;">* 부가세 10% 별도</span></li>
+                    `,
                 list_rental_policy: `
-                            <li><span class="model">음향 엔지니어 1인 인건비 포함</span></li>
-                            <li><span class="model">티켓과 굿즈 판매 수익은 100% 주최측 귀속</span></li>
-                            <li><span class="model">포스터 제작, 티켓 관리는 주최측에서 진행</span></li>
-                            <li><span class="model">외부 케이터링 협의 가능</span></li>
-                            <li><span class="model">브랜드 행사는 별도 문의</span></li>
-                        `,
+                        <li><span class="model">음향 엔지니어 1인 인건비 포함</span></li>
+                        <li><span class="model">티켓과 굿즈 판매 수익은 100% 주최측 귀속</span></li>
+                        <li><span class="model">포스터 제작, 티켓 관리는 주최측에서 진행</span></li>
+                        <li><span class="model">외부 케이터링 협의 가능</span></li>
+                        <li><span class="model">브랜드 행사는 별도 문의</span></li>
+                    `,
                 list_rental_booking: `
-                            <li><span class="model">프로젝터 & 아날로그 TV 사용 : 50,000원</span></li>
-                            <li><span class="model">멀티트랙 레코딩 : 50,000원 (Mac용 저장장치 지참)</span></li>
-                            <li><span class="model font-bold text-white">농협 475817-56-000664 정주영</span></li>
-                            <li><span class="model font-bold text-white">T: 010-5354-0193</span></li>
-                            <li style="border-bottom:none; margin-top:15px;"><span class="model"><a href="https://docs.google.com/forms/d/e/1FAIpQLScqIyXq43Pi7cAUtnZXurxGHT7BakNu9-noh4QeExz4V843gw/viewform?usp=sharing&ouid=115788391464491178818" target="_blank" class="contact-link" style="color:var(--senggi-red); font-weight:900; border-bottom:2px solid var(--senggi-red);">대관 신청하기</a></span></li>
-                        `
+                        <li><span class="model">예약금 : 400,000원</span></li>
+                        <li><span class="model">촬영 대관 : 시간당 100,000원 (3시간 기본)</span></li>
+                        <li><span class="model">프로젝터 & 아날로그 TV 사용 : 50,000원</span></li>
+                        <li><span class="model">멀티트랙 레코딩 : 팀당 50,000원 (45분 기준, Mac용 저장장치 지참)</span></li>
+                        <li><span class="model font-bold text-white">농협 475817-56-000664 정주영</span></li>
+                        <li><span class="model font-bold text-white">T: 010-5354-0193</span></li>
+                        <li style="border-bottom:none; margin-top:15px;"><span class="model"><a href="https://docs.google.com/forms/d/e/1FAIpQLScqIyXq43Pi7cAUtnZXurxGHT7BakNu9-noh4QeExz4V843gw/viewform?usp=sharing&ouid=115788391464491178818" target="_blank" class="contact-link" style="color:var(--senggi-red); font-weight:900; border-bottom:2px solid var(--senggi-red);">대관 신청하기</a></span></li>
+                    `
             },
             EN: {
                 m_about: "About", m_gallery: "Gallery", m_space: "Space", m_equip: "Equipment", m_rental: "Rental", m_schedule: "Schedule",
@@ -1030,35 +1035,39 @@
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">Wing-BK / DL16, SD16 I/O Box</span><span class="brand">Behringer</span></li>`,
+                list_outboard: `<li><span class="brand text-gray-400 mb-1 mt-3">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">MF-101</span><span class="brand">Moogerfooger</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
                 list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 / AX3 Wireless Tubes</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
 
                 list_rental_price: `
-                            <li><span class="model">Mon ~ Thu</span><span class="brand">580,000 KRW</span></li>
-                            <li><span class="model">Fri ~ Sun, Holiday</span><span class="brand">780,000 KRW</span></li>
-                            <li><span class="model">Sat</span><span class="brand">880,000 KRW</span></li>
-                            <li><span class="model">Rooftop Rental</span><span class="brand">+ 500,000 KRW</span></li>
-                            <li><span class="model text-gray-400" style="font-size:0.75rem;">* 10% VAT excluded</span></li>
-                        `,
+                        <li><span class="model">Mon ~ Thu</span><span class="brand">630,000 KRW</span></li>
+                        <li><span class="model">Weekday Holidays</span><span class="brand">780,000 KRW</span></li>
+                        <li><span class="model">Fri ~ Sun, Holiday</span><span class="brand">780,000 KRW</span></li>
+                        <li><span class="model">Sat</span><span class="brand">880,000 KRW</span></li>
+                        <li><span class="model">Rooftop Rental</span><span class="brand">+ 500,000 KRW</span></li>
+                        <li><span class="model text-gray-400" style="font-size:0.75rem;">* 10% VAT excluded</span></li>
+                    `,
                 list_rental_policy: `
-                            <li><span class="model">Engineer labor included</span></li>
-                            <li><span class="model">Profit from ticket & merch sales to organizer</span></li>
-                            <li><span class="model">Organizer handles poster & ticketing</span></li>
-                            <li><span class="model">Catering consult possible</span></li>
-                            <li><span class="model">Brand events: Contact separately</span></li>
-                        `,
+                        <li><span class="model">Engineer labor included</span></li>
+                        <li><span class="model">Profit from ticket & merch sales to organizer</span></li>
+                        <li><span class="model">Organizer handles poster & ticketing</span></li>
+                        <li><span class="model">Catering consult possible</span></li>
+                        <li><span class="model">Brand events: Contact separately</span></li>
+                    `,
                 list_rental_booking: `
-                            <li><span class="model">Projector & TV usage : 50,000 KRW</span></li>
-                            <li><span class="model">Multitrack Recording : 50,000 KRW (Bring Mac HDD)</span></li>
-                            <li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>
-                            <li><span class="model font-bold text-white">T: +82-10-5354-0193</span></li>
-                            <li style="border-bottom:none; margin-top:15px;"><span class="model"><a href="https://docs.google.com/forms/d/e/1FAIpQLScqIyXq43Pi7cAUtnZXurxGHT7BakNu9-noh4QeExz4V843gw/viewform?usp=sharing&ouid=115788391464491178818" target="_blank" class="contact-link" style="color:var(--senggi-red); font-weight:900; border-bottom:2px solid var(--senggi-red);">Online Application</a></span></li>
-                        `
+                        <li><span class="model">Deposit : 400,000 KRW</span></li>
+                        <li><span class="model">Photo / Video Shoot : 100,000 KRW/hr (Min 3 hrs)</span></li>
+                        <li><span class="model">Projector & TV usage : 50,000 KRW</span></li>
+                        <li><span class="model">Multitrack Recording : 50,000 KRW/team (45 min, Bring Mac HDD)</span></li>
+                        <li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>
+                        <li><span class="model font-bold text-white">T: +82-10-5354-0193</span></li>
+                        <li style="border-bottom:none; margin-top:15px;"><span class="model"><a href="https://docs.google.com/forms/d/e/1FAIpQLScqIyXq43Pi7cAUtnZXurxGHT7BakNu9-noh4QeExz4V843gw/viewform?usp=sharing&ouid=115788391464491178818" target="_blank" class="contact-link" style="color:var(--senggi-red); font-weight:900; border-bottom:2px solid var(--senggi-red);">Online Application</a></span></li>
+                    `
             },
             JP: {
                 m_about: "紹介", m_gallery: "ギャラリー", m_space: "空間", m_equip: "機材", m_rental: "レンタル", m_schedule: "スケジュール",
-                a_content: "<b>Senggi Studio</b>는、境界のない創作活動を志向し、<br>音楽を軸に多様なプロジェクトと経験が<br>交差し、繋がっていく空間です。.",
+                a_content: "<b>Senggi Studio</b>は、境界のない創作活動を志向し、<br>音楽を軸に多様なプロジェクトと経験が<br>交差し、繋がっていく空間です。",
                 e_cat_amps_mics: "アンプ<br>& マイク", e_cat_instr_dj: "楽器<br>& DJ機材", e_cat_sys: "音響<br>& 照明",
                 r_sub_pricing: "PRICING", r_sub_policy: "POLICY", r_sub_service: "OPTIONS & BOOKING",
                 s_cap_5f: "収容人数：スタンディング100, 座席65", s_cap_roof: "収容人数：約80名",
@@ -1071,31 +1080,35 @@
                 list_keys: `<li><span class="brand text-gray-400 mb-1 mt-3">Keyboards</span><span class="model">S90ES / Motif ES7</span><span class="brand">Yamaha</span></li>`,
                 list_dj: `<li><span class="brand text-gray-400 mb-1 mt-3">DJ Set</span><span class="model">CDJ-2000 (2) / DJM 900 Nexus</span><span class="brand">Pioneer</span></li><li><span class="model">SL-1200MK5 (2)</span><span class="brand">Technics</span></li>`,
                 list_console: `<li><span class="brand text-gray-400 mb-1">FOH & Console</span><span class="model">Wing-BK / DL16, SD16 I/O Box</span><span class="brand">Behringer</span></li>`,
+                list_outboard: `<li><span class="brand text-gray-400 mb-1 mt-3">Outboard Hardware</span><span class="model">Fusion / G-Comp</span><span class="brand">SSL</span></li><li><span class="model">Wellspring</span><span class="brand">Teaching Machine</span></li><li><span class="model">MF-101</span><span class="brand">Moogerfooger</span></li><li><span class="model">Space Echo RE-201</span><span class="brand">Roland</span></li>`,
                 list_speakers: `<li><span class="brand text-gray-400 mb-1 mt-3">Speakers</span><span class="model">CDL-12P (2)</span><span class="brand">Presonus</span></li><li><span class="model">SRM 450 (2) / Thump-15A (2) / Thump-18S (2)</span><span class="brand">Mackie</span></li>`,
                 list_light: `<li><span class="brand text-gray-400 mb-1 mt-3">Lighting System</span><span class="model">AX1 (3) / AX3 (3) Wireless</span><span class="brand">Astera</span></li><li><span class="model">Hue System (20ea)</span><span class="brand">Phillips</span></li>`,
                 list_os: `<li><span class="brand text-gray-400 mb-1 mt-3">OS & Software</span><span class="model">iMac 3.4GHz / Logic Pro X</span><span class="brand">Apple</span></li>`,
 
                 list_rental_price: `
-                            <li><span class="model">月 ~ 木曜日</span><span class="brand">580,000 KRW</span></li>
-                            <li><span class="model">金 ~ 日, 祝日</span><span class="brand">780,000 KRW</span></li>
-                            <li><span class="model">土曜日</span><span class="brand">880,000 KRW</span></li>
-                            <li><span class="model">Rooftop レンタル</span><span class="brand">+ 500,000 KRW</span></li>
-                            <li><span class="model text-gray-400" style="font-size:0.75rem;">* 付加税 10% 別途</span></li>
-                        `,
+                        <li><span class="model">月 ~ 木曜日</span><span class="brand">630,000 KRW</span></li>
+                        <li><span class="model">平日祝日</span><span class="brand">780,000 KRW</span></li>
+                        <li><span class="model">金 ~ 日, 祝日</span><span class="brand">780,000 KRW</span></li>
+                        <li><span class="model">土曜日</span><span class="brand">880,000 KRW</span></li>
+                        <li><span class="model">Rooftop レンタル</span><span class="brand">+ 500,000 KRW</span></li>
+                        <li><span class="model text-gray-400" style="font-size:0.75rem;">* 付加税 10% 別途</span></li>
+                    `,
                 list_rental_policy: `
-                            <li><span class="model">エンジニア1名込み</span></li>
-                            <li><span class="model">チケット、グッズの販売収익は100%主催者に帰属</span></li>
-                            <li><span class="model">ポスター制作、チケット管理は主催側で進行</span></li>
-                            <li><span class="model">ケータリング相談可</span></li>
-                            <li><span class="model" style="color:var(--senggi-red);">ブランドイベントは別途お問い合わせ</span></li>
-                        `,
+                        <li><span class="model">エンジニア1名込み</span></li>
+                        <li><span class="model">チケット、グッズの販売収益は100%主催者に帰属</span></li>
+                        <li><span class="model">ポスター制作、チケット管理は主催側で進行</span></li>
+                        <li><span class="model">ケータリング相談可</span></li>
+                        <li><span class="model" style="color:var(--senggi-red);">ブランドイベントは別途お問い合わせ</span></li>
+                    `,
                 list_rental_booking: `
-                            <li><span class="model">プロジェクター & TV使用 : 50,000 KRW</span></li>
-                            <li><span class="model">マルチトラック録音 : 50,000 KRW (HDD持参)</span></li>
-                            <li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>
-                            <li><span class="model font-bold text-white">T: 010-5354-0193</span></li>
-                            <li style="border-bottom:none; margin-top:15px;"><span class="model"><a href="https://docs.google.com/forms/d/e/1FAIpQLScqIyXq43Pi7cAUtnZXurxGHT7BakNu9-noh4QeExz4V843gw/viewform?usp=sharing&ouid=115788391464491178818" target="_blank" class="contact-link" style="color:var(--senggi-red); font-weight:900; border-bottom:2px solid var(--senggi-red);">お申し込みはこちら</a></span></li>
-                        `
+                        <li><span class="model">予約金 : 400,000 KRW</span></li>
+                        <li><span class="model">撮影レンタル : 1時間 100,000 KRW (基本3時間)</span></li>
+                        <li><span class="model">プロジェクター & TV使用 : 50,000 KRW</span></li>
+                        <li><span class="model">マルチトラック録音 : 1チーム 50,000 KRW (45分基準, HDD持参)</span></li>
+                        <li><span class="model font-bold text-white">Nonghyup 475817-56-000664</span></li>
+                        <li><span class="model font-bold text-white">T: 010-5354-0193</span></li>
+                        <li style="border-bottom:none; margin-top:15px;"><span class="model"><a href="https://docs.google.com/forms/d/e/1FAIpQLScqIyXq43Pi7cAUtnZXurxGHT7BakNu9-noh4QeExz4V843gw/viewform?usp=sharing&ouid=115788391464491178818" target="_blank" class="contact-link" style="color:var(--senggi-red); font-weight:900; border-bottom:2px solid var(--senggi-red);">お申し込みはこちら</a></span></li>
+                    `
             }
         };
 
@@ -1105,7 +1118,7 @@
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang][key]) el.innerHTML = translations[lang][key];
             });
-            const listIds = ['g_amps', 'b_amps', 'mics', 'drums', 'keys', 'dj', 'console', 'speakers', 'light', 'os', 'rental_price', 'rental_policy', 'rental_booking'];
+            const listIds = ['g_amps', 'b_amps', 'mics', 'drums', 'keys', 'dj', 'console', 'outboard', 'speakers', 'light', 'os', 'rental_price', 'rental_policy', 'rental_booking'];
             listIds.forEach(id => {
                 const el = document.getElementById(`list-${id.replace(/_/g, '-')}`);
                 if (el && translations[lang][`list_${id}`]) el.innerHTML = translations[lang][`list_${id}`];
